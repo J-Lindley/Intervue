@@ -1,4 +1,7 @@
 import passport from 'passport';
+const path = require("path");
+const router = require("express").Router();
+const apiRoutes = require("./api");
 
 /* GET Google Authentication API. */
 router.get(
@@ -13,3 +16,13 @@ router.get(
       res.redirect("http://localhost:3000?token=" + token);
   }
 );
+
+// API Routes
+router.use("/api", apiRoutes);
+
+// If no API routes are hit, send the React app
+router.use(function(req, res) {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
+
+module.exports = router;
