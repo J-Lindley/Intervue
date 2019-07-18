@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const express = require("express");
 
 const mongoose = require("mongoose");
@@ -22,3 +23,19 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglis
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
+=======
+const http = require('http');
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3001;
+
+require('dotenv').config();
+
+app.get('/', function(req, res) {
+  res.status(200).send('Hello world');
+});
+
+app.listen(PORT, function() {
+  console.log('Server is running on PORT:',PORT);
+});
+>>>>>>> 30fbee18cc7b87210183b99f4776d1d72d8a7461

@@ -10,6 +10,7 @@ mongoose.connect(
 
 const questionSeed = [
   {
+<<<<<<< HEAD
     company:
       question: "What are the data types supported by JavaScript?"
     answer: "The data types supported by JavaScript are: Undefined, Null, Boolean, String, Symbol, Number, Object"    
@@ -128,6 +129,26 @@ const questionSeed = [
 db.Book
   .remove({})
   .then(() => db.Book.collection.insertMany(bookSeed))
+=======
+    question: "Describe and code an algorithm that returns the first duplicate character in a string?",
+    answer: 'public class FirstDupCharacter { public static void main(String[] args) { System.out.println(findDupCharacter("abcdefghiaklmno")); } private static Character findDupCharacter(final String input) { final Set set = new HashSet(); Character dup = null; for (int i = 0; i &lt; input.length(); i++) { if (set.contains(input.charAt(i))) { dup = input.charAt(i); break; } else { set.add(input.charAt(i)); } } return dup; } }',
+    company: ["Expedia"],
+    jobType: ["Software Developer"],
+    questionType: []
+  },
+  {
+    question: "Write a method to decide if the given binary tree is a binary search tree or not.",
+    answer: '',
+    company: ["Amazon"],
+    jobType: [],
+    questionType: []
+  }
+];
+
+db.Question
+  .remove({})
+  .then(() => db.Question.collection.insertMany(questionSeed))
+>>>>>>> 30fbee18cc7b87210183b99f4776d1d72d8a7461
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
