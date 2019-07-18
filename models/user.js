@@ -7,5 +7,5 @@ const userSchema = new Schema ({
   saved: [questionSchema]
 });
 
-const User = mongoos.model("User", userSchema);
+const User = mongoose.model("User", userSchema);
 module.exports = User;
