@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema ({
   username: String,
-  saved: [{question: questionSchema, notes: String}]
+  saved: [{question: String, notes: String}]
 });
 
 const User = mongoose.model("User", userSchema);
