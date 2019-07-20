@@ -1,5 +1,8 @@
-const express = require("express");
-const mongoose = require("mongoose");
+const express = require('express');
+const mongoose = require('mongoose');
+const cookieSession = require('cookie-session');
+const passport = require('passport');
+const keys = require('./config/keys');
 
 // Requiring passport authentication information from passport.js file.
 require('./models/index');
@@ -7,16 +10,28 @@ require('./services/passport');
 
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/interviewquestions");
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/interviewquestions');
 
 const app = express();
+
+app.use(
+  cookieSession({
+    // Max session is 30 days.
+    maxAge: 30 * 24 * 60 * 60 * 1000,
+    keys: [keys.cookieKey]
+  })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 const PORT = process.env.PORT || 5000;
 
 // Requiring route information in from authRoutes.js and index.js.
 require('./routes/authRoutes')(app);
 
 app.listen(PORT, () => {
-  console.log("Server is running on PORT:", PORT);
+  console.log('Server is running on PORT:', PORT);
 });
 
 
