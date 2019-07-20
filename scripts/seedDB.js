@@ -10,9 +10,8 @@ mongoose.connect(
 
 const questionSeed = [
   {
-    company:
-      question: "What are the data types supported by JavaScript?"
-    answer: "The data types supported by JavaScript are: Undefined, Null, Boolean, String, Symbol, Number, Object"    
+    question: "What are the data types supported by JavaScript?",
+    answer: "The data types supported by JavaScript are: Undefined, Null, Boolean, String, Symbol, Number, Object",
     date: new Date(Date.now())
     userSubmitted: 
     jobType:
@@ -82,9 +81,8 @@ const questionSeed = [
       questionType:
   },
   {
-    company:
-      question: "What is 'this' keyword in JavaScript?"
-    answer: "'This' keyword refers to the object from where it was called."
+    question: "What is 'this' keyword in JavaScript?",
+    answer: "'This' keyword refers to the object from where it was called.",
     date: new Date(Date.now())
     userSubmitted: 
     jobType:
@@ -203,7 +201,7 @@ db.Question
   .remove({})
   .then(() => db.Question.collection.insertMany(questionSeed))
   .then(data => {
-    console.log(data.result.n + " records inserted!");
+    console.log(data.result.n + " records inserted! ");
     process.exit(0);
   })
   .catch(err => {
