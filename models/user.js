@@ -4,8 +4,8 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema ({
   username: String,
-  saved: [questionSchema]
+  saved: [{question: String, notes: String}]
 });
 
-const User = mongoos.model("User", userSchema);
+const User = mongoose.model("User", userSchema);
 module.exports = User;
