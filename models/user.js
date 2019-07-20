@@ -6,7 +6,7 @@ const userSchema = new Schema ({
   googleId: String,
   userName: String,
   userPhoto: String,
-  saved: [{question: String, notes: String}]
+  saved: Boolean
 });
 
 const User = mongoose.model("user", userSchema);
