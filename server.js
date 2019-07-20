@@ -8,8 +8,9 @@ const PORT = process.env.PORT || 5000;
 
 const mongoose = require('mongoose');
 
-// Requiring route information in from authRoutes.js.
+// Requiring route information in from authRoutes.js and index.js.
 require('./routes/authRoutes')(app);
+require('./routes/index')(router);
 
 app.listen(PORT, () => {
   console.log("Server is running on PORT:", PORT);
