@@ -1,11 +1,13 @@
 const mongoose = require("mongoose");
 const questionSchema = require("./question.js");
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
 const userSchema = new Schema ({
-  username: String,
+  googleId: String,
+  userName: String,
+  userPhoto: String,
   saved: [{question: String, notes: String}]
 });
 
-const User = mongoose.model("User", userSchema);
+mongoose.model("user", userSchema);
 module.exports = User;
