@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema ({
   username: String,
-  saved: [{question: String, notes: String}]
+  //jon changed this
+  saved: Boolean
 });
 
 const User = mongoose.model("User", userSchema);
