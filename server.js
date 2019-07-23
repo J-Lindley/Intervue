@@ -14,7 +14,8 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/interviewquesti
 
 app.use(
   cookieSession({
-    // Max session is 30 days.
+    // Max session is 30 days
+    maxAge: 30 * 24 * 60 * 60 * 1000,
     keys: [keys.cookieKey]
   })
 );
