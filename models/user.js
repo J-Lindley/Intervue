@@ -3,10 +3,12 @@ const questionSchema = require("./question.js");
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema ({
-  username: String,
-  //jon changed this
+  googleId: String,
+  userName: String,
+  userPhoto: String,
   saved: Boolean
 });
 
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model("user", userSchema);
+
 module.exports = User;
