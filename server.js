@@ -1,10 +1,9 @@
 const express = require('express');
 const app = express();
-const mongoose = require('mongoose');
-const cookieSession = require('cookie-session');
-const passport = require('passport');
-const keys = require('./config/keys');
-
+const mongoose = require("mongoose");
+const cookieSession = require('cookie-session')
+const passport = require('passport')
+const keys = require('./config/keys')
 // Requiring passport authentication information from passport.js file.
 require('./models/index');
 require('./services/passport');
@@ -16,7 +15,6 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/interviewquesti
 app.use(
   cookieSession({
     // Max session is 30 days.
-    maxAge: 30 * 24 * 60 * 60 * 1000,
     keys: [keys.cookieKey]
   })
 );
