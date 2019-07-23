@@ -1,10 +1,9 @@
 const express = require('express');
 const app = express();
-const mongoose = require('mongoose');
-const cookieSession = require('cookie-session');
-const passport = require('passport');
-const keys = require('./config/keys');
-
+const mongoose = require("mongoose");
+const cookieSession = require('cookie-session')
+const passport = require('passport')
+const keys = require('./config/keys')
 // Requiring passport authentication information from passport.js file.
 require('./models/index');
 require('./services/passport');

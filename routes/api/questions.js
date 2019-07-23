@@ -8,18 +8,12 @@ router.route("/")
 router.route("/company/:company")
   .get(questionsController.findCompany);
 
-  // fix later
-// router.route("/jobType/:jobType")
-//   .get(questionsController.findJobType);
 
-// router.route("/questionType/:questionType")
-//   .get(questionsController.findquestionType);
+router.route("/catagory/:catagory")
+  .get(questionsController.findCatagory)
 
+  //Get user submitted questions
+router.route("/userId/:userId")
+  .get(questions.controller.findSaved)
 
-
-
-  module.exports = router;
-
-
-
-  
+module.exports = router;
