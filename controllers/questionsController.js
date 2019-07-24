@@ -10,15 +10,17 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   findCompany: function(req, res) {
+    console.log(req.params.company);
+    console.log("hello");
     db.Question 
-      .find(req.params.company)
+      .find({company: req.params.company})
       .sort({date: -1})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findCatagory: function(req, res) {
+  findCategory: function(req, res) {
     db.Question 
-      .find(req.params.catagory)
+      .find({questionType: req.params.category})
       .sort({date: -1})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
