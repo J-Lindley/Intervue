@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import * as actions from './actions';
 
 import Header from "./components/Header";
+import InfoPage from "./pages/infoPage";
 
 class App extends Component {
   componentDidMount() {
@@ -20,9 +21,9 @@ class App extends Component {
               <Router>
                 <div>
                   <Switch>
-                    {/* <Route exact path="/" component={}/>
-                  <Route exact path="/questionsPage" component={} />
-                  <Route exact path="/newQuestion" component={} />
+                    {/* <Route exact path="/" component={}/>*/
+                  <Route exact path="/infoPage" component={InfoPage} />
+                  /*<Route exact path="/newQuestion" component={} />
                   <Route exact path="/detailsPage/:id" />
                   <Route component={404Page} /> */}
                   </Switch>
