@@ -8,9 +8,8 @@ router.route("/")
 router.route("/company/:company")
   .get(questionsController.findCompany);
 
-
-router.route("/catagory/:catagory")
-  .get(questionsController.findCatagory)
+router.route("/category/:category")
+  .get(questionsController.findCategory);
 
 //   //Get user submitted questions
 // router.route("/userId/:userId")
