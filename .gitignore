@@ -19,9 +19,13 @@ keys.js
 .env.development.local
 .env.test.local
 .env.production.local
+config/keys.js
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3f0d0e5b79a5d0bde9e15ab97666c814023b14da
