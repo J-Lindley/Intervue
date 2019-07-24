@@ -19,11 +19,11 @@ const questionSeed = [
   },
   {
     company:
-      question: "What is an undefined value in JavaScript?"
-    answer: "Undefined value means the 1. Variable used in the code doesn't exist 2. Variable is not assigned to any value 3.Property doesn't exist."
-      date: new Date(Date.now())
-      userSubmitted: 
-      jobType:
+      question: "What is an undefined value in JavaScript?",
+      answer: "Undefined value means the 1. Variable used in the code doesn't exist 2. Variable is not assigned to any value 3.Property doesn't exist."
+      date: new Date(Date.now()),
+      userSubmitted: ,
+      jobType:,
       questionType:
   },
   {
