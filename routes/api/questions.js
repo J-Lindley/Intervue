@@ -12,8 +12,8 @@ router.route("/company/:company")
 router.route("/catagory/:catagory")
   .get(questionsController.findCatagory)
 
-  //Get user submitted questions
-router.route("/userId/:userId")
-  .get(questions.controller.findSaved)
+//   //Get user submitted questions
+// router.route("/userId/:userId")
+//   .get(questionsController.findSaved)
 
 module.exports = router;

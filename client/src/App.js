@@ -1,29 +1,39 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Header from './components/Header';
-import GoogleAuth from './components/GoogleAuth';
+import { connect } from 'react-redux';
+import * as actions from './actions';
 
+import Header from "./components/Header";
 
-function App() {
-  return (
-    <div className="App">
-      <Header>
-        <GoogleAuth />
-      </Header>
-      {/* <Router>
-      <div>
-        <Nav />
-        <Switch>
-          <Route exact path="/"/>
-          <Route exact path="/books"/>
-          <Route exact path="/books/:id" />
-          <Route component={NoMatch} />
-        </Switch>
+class App extends Component {
+  componentDidMount() {
+    this.props.fetchUser();
+  }
+  render() {
+    return (
+      <div className="App">
+        {
+          <div>
+            <Header />
+            <div className="ui container">
+              <Router>
+                <div>
+                  <Switch>
+                    {/* <Route exact path="/" component={}/>
+                  <Route exact path="/questionsPage" component={} />
+                  <Route exact path="/newQuestion" component={} />
+                  <Route exact path="/detailsPage/:id" />
+                  <Route component={404Page} /> */}
+                  </Switch>
+                </div>
+              </Router>
+            </div>
+          </div>
+        }
       </div>
-    </Router> */}
-    </div>
-  );
+    );
+  }
 }
 
-export default App;
+export default connect(null, actions)(App);
