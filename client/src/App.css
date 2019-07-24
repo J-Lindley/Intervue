@@ -3,5 +3,21 @@
 }
 
 #headerTitle {
-  align-content: center;
+  padding: 20px;
+}
+
+#questionCard {
+  float: right;
+}
+
+#questionTitle {
+  padding: 20px;
+}
+
+#questionAnswerTitle {
+  padding: 20px;
+}
+
+.ui.card {
+  width: 600px;
 }

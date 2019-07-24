@@ -12,8 +12,7 @@ router.route("/company/:company")
 router.route("/catagory/:catagory")
   .get(questionsController.findCatagory)
 
-//   //Get user submitted questions
-// router.route("/userId/:userId")
-//   .get(questionsController.findSaved)
+router.route("/api/newQuestion")
+  .post(questionsController.create)
 
 module.exports = router;
