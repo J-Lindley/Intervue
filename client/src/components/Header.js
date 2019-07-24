@@ -1,5 +1,6 @@
-import React , {Component} from 'react';
+import React , {Component, Fragment} from 'react';
 import { connect } from 'react-redux';
+import "../App.css";
 
 class Header extends Component {
   renderContent() {
@@ -9,7 +10,13 @@ class Header extends Component {
       case false: 
         return <a href="/auth/google"> Login with Google </a>;
       default:
-        return <a href="/api/logout">Logout</a>;
+        return <Fragment>
+          <div className="header item">
+            <a>Profile</a>
+          </div>
+          <div className="header item">
+            <a href="/api/logout">Logout</a>
+          </div></Fragment>
     }
   }
 
@@ -17,10 +24,7 @@ class Header extends Component {
     return (
       <div className="ui menu">
         <div className="header item">
-          InterVue
-        </div>
-        <div className="header item">
-          <a>Profile</a>
+          <h2>InterVue</h2>
         </div>
         <div className="header item right">
           {this.renderContent()}

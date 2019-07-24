@@ -11,7 +11,7 @@ module.exports = {
   },
   findCompany: function(req, res) {
     db.Question 
-      .find(req.params.company)
+      .find({company: req.params.company})
       .sort({date: -1})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
