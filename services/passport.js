@@ -13,6 +13,7 @@ passport.deserializeUser((id, done) => {
     done(null, user);
   });
 });
+console.log(process.env.googleClientID);
 
 // Using passport to set up new GoogleStrategy and begin authentication.
 passport.use(
