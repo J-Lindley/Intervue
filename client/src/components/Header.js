@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../App.css";
 
 class Header extends Component {
@@ -13,6 +13,9 @@ class Header extends Component {
       default:
         return (
           <Fragment>
+            <div className="header item">
+              <a href="/newQuestion">Add Interview Question</a>
+            </div>
             <div className="header item">
               <a href="/profile">Profile</a>
             </div>
@@ -27,12 +30,12 @@ class Header extends Component {
   render() {
     return (
       <div className="ui menu">
-          {/* <Link
+          <Link
             to={this.props.auth ? '/questionsPage' : '/infoPage'}
             className="header item"
-          > */}
+          >
             <h2>InterVue</h2>
-          {/* </Link> */}
+          </Link>
         <div className="header item right">{this.renderContent()}</div>
       </div>
     );

@@ -8,6 +8,8 @@
 
 #questionCard {
   float: right;
+  margin-right: 105px;
+  margin-top: 200px;
 }
 
 #questionTitle {
@@ -20,4 +22,27 @@
 
 .ui.card {
   width: 600px;
+}
+
+.ui.button {
+  margin-top: 20px;
+}
+
+.ui.header {
+  padding: 20px;
+}
+
+#nextBtn {
+  float: right;
+  margin-top: 300px;
+}
+
+#previousBtn {
+  float: left;
+  margin-left: 100px;
+  margin-top: 300px;
+}
+
+#infoData {
+  margin-top: 200px;
 }

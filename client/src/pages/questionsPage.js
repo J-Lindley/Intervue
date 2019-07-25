@@ -1,23 +1,35 @@
 import React, {Component, Fragment}from 'react';
+import {Link} from 'react-router-dom';
+import { connect } from "react-redux";
 import '../App.css';
 import SaveBtn from '../components/SaveBtn';
 import DeleteBtn from '../components/DeleteBtn';
+
 
 class QuestionsPage extends Component {
   render() {
     return (
       <Fragment>
         <div className="ui left fixed vertical menu">
-          <div className="item" id="headerTitle">
+          <Link
+            to={this.props.auth ? '/questionsPage' : '/infoPage'}
+            className="item" id="headerTitle"
+          >
             <h2>InterVue</h2>
-          </div>
+          </Link>
           <div className= "item">
             <h4>Question Types: </h4>
           </div>
-          {/* <a class="item">Behavioral</a>
-          <a class="item">JavaScript</a>
-          <a class="item">React</a>
-          <a class="item"></a> */}
+          <div className="item">Behavioral</div>
+          <div className="item">JavaScript</div>
+          <div className="item">Java</div>
+          <div className="item">React</div>
+        </div>
+        
+        <div>
+          <button class="ui right labeled icon button" id="nextBtn">Next
+          <i class="right arrow icon"></i>
+          </button>
         </div>
         
         <div class="ui card" id="questionCard">
@@ -44,9 +56,19 @@ class QuestionsPage extends Component {
             </span>
           </div>
         </div>
+
+        <div>
+          <button class="ui left labeled icon button" id="previousBtn">Previous
+          <i class="left arrow icon"></i>
+          </button>
+        </div>
       </Fragment>
     );
   }
 }
 
-export default QuestionsPage;
+function mapStateToProps({ auth }) {
+  return { auth };
+}
+
+export default connect(mapStateToProps) (QuestionsPage);

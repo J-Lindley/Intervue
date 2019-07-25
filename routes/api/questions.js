@@ -9,8 +9,8 @@ router.route("/company/:company")
   .get(questionsController.findCompany);
 
 
-router.route("/catagory/:catagory")
-  .get(questionsController.findCatagory)
+router.route("/category/:category")
+  .get(questionsController.findCategory)
 
 router.route("/api/newQuestion")
   .post(questionsController.create)

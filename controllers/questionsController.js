@@ -16,9 +16,9 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findCatagory: function(req, res) {
+  findCategory: function(req, res) {
     db.Question 
-      .find(req.params.catagory)
+      .find({questionType: req.params.category})
       .sort({date: -1})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
