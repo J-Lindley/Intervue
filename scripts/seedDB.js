@@ -12,17 +12,21 @@ const questionSeed = [
   {
     question: "What are the data types supported by JavaScript?",
     answer: "The data types supported by JavaScript are: Undefined, Null, Boolean, String, Symbol, Number, Object",
-    date: new Date(Date.now())
+    date: new Date(Date.now()),
+    questionType: "javascript"
+
   },
   {
     question: "What is an undefined value in JavaScript?",
     answer: "Undefined value means the 1. Variable used in the code doesn't exist 2. Variable is not assigned to any value 3.Property doesn't exist.",
-    date: new Date(Date.now())
+    date: new Date(Date.now()),
+    questionType: "javascript"
   },
   {
     question: "What do mean by NULL in Javascript?",
     answer: "The NULL value is used to represent no value or no object. It implies no object or null string, no valid boolean value, no number and no array object.",
-    date: new Date(Date.now())
+    date: new Date(Date.now()),
+    questionType: "javascript"
   },
   {
     question: "Explain how to detect the operating system on the client machine?",

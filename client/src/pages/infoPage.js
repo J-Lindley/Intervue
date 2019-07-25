@@ -11,25 +11,24 @@ render() {
   return(
 
     <Fragment>
-    <div>
+    <div id="infoData">
       <h1>Hello, Welcome to InterVue. </h1>
 
-      <p>A place for new developers to get access to common interview questions. 
+      <h3>A place for new developers to get access to common interview questions. 
       We found popular interview questions and put them in a serchable format. 
-      Search buy programming language, to capture questions specific to your job search.  
-      Create a profile to archive the questions you want keep handy.
-      </p>
+       Search by programming language, to capture questions specific to your job search.  
+       Create a profile to archive the questions you want keep handy.
+      </h3>
     </div>
     
     <div>
-    <button className ="ui button">Get Started</button>
+    <button className ="ui button">
+      <a href="/questionsPage">Get Started</a>
+    </button>
     </div>
     </Fragment>
   );
 }
 }
+
 export default InfoPage;
-
-
-
-
