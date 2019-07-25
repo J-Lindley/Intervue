@@ -8,7 +8,6 @@ router.route("/")
 router.route("/company/:company")
   .get(questionsController.findCompany);
 
-
 router.route("/category/:category")
   .get(questionsController.findCategory)
 

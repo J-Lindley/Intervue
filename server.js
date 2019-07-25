@@ -12,7 +12,7 @@ require('./models/index');
 require('./services/passport');
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/interviewquestions');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/interviewquestions', { useNewUrlParser: true });
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -45,4 +45,4 @@ app.listen(PORT, () => {
 });
 
 
-
+});
