@@ -3,8 +3,6 @@ import {Link} from 'react-router-dom';
 import { connect } from "react-redux";
 import '../App.css';
 import SaveBtn from '../components/SaveBtn';
-import DeleteBtn from '../components/DeleteBtn';
-
 
 class QuestionsPage extends Component {
   render() {
@@ -43,7 +41,6 @@ class QuestionsPage extends Component {
             </div>
           <div class="extra content">
             <SaveBtn />
-            <DeleteBtn />
           </div>
           <div class="extra content">
             <span class="left floated like">
@@ -51,8 +48,8 @@ class QuestionsPage extends Component {
               Helpful
             </span>
             <span class="right floated star">
-            <i class="thumbs down outline icon"></i>
-            Not Helpful
+              <i class="thumbs down outline icon"></i>
+              Not Helpful
             </span>
           </div>
         </div>
