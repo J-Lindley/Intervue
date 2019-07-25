@@ -30,4 +30,5 @@ render() {
   );
 }
 }
+
 export default InfoPage;

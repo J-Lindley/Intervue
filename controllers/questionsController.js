@@ -10,6 +10,8 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   findCompany: function(req, res) {
+    console.log(req.params.company);
+    console.log("hello");
     db.Question 
       .find({company: req.params.company})
       .sort({date: -1})
