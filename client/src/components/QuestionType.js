@@ -3,7 +3,7 @@ import '../App.css';
 
 class QuestionType extends Component {
   componentDidMount() {
-    this.loadQuestionType();
+    
   }
 
   loadQuestionType = () => {
