@@ -19,6 +19,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   findCategory: function(req, res) {
+    console.log(req.body)
     db.Question 
       .find({questionType: req.params.category})
       .sort({date: -1})

@@ -4,9 +4,30 @@ import { connect } from "react-redux";
 import '../App.css';
 import SaveBtn from '../components/SaveBtn';
 import DeleteBtn from '../components/DeleteBtn';
+import axios from "axios";
+import Slider from "react-slick";
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1
+}
 
 
 class QuestionsPage extends Component {
+  
+  state={
+    category:"javascript",
+    questions:[]
+  }
+  componentDidMount() {
+    axios.get("/api/questions/category/" + this.state.category)
+    .then(res => {
+      console.log(res.data) 
+      this.setState({questions:res.data})}).catch(err => console.log(err))
+  }
+  
   render() {
     return (
       <Fragment>
@@ -31,7 +52,17 @@ class QuestionsPage extends Component {
           <i class="right arrow icon"></i>
           </button>
         </div>
-        
+        <Slider {...settings}>
+          {
+            this.state.questions.map(question=> (
+              <div>
+                {
+                  question.question
+                }
+              </div>
+            ))
+          }
+         </Slider>
         <div class="ui card" id="questionCard">
             <div class="content">
             <div class="header" id='questionTitle'> Interview Question: </div>
