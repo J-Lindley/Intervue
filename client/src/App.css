@@ -1,15 +1,42 @@
+body {
+  font-family: 'Lora', serif;
+  color: whitesmoke;
+  background: linear-gradient(90deg, rgba(181,180,198,1) 0%, rgba(14,141,209,1) 51%, rgba(88,219,219,1) 100%);
+  background-size: 600% 600%;
+
+  -webkit-animation: AnimationName 14s ease infinite;
+  -moz-animation: AnimationName 14s ease infinite;
+  animation: AnimationName 14s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0%{background-position: 0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position: 0% 50%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position: 0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position: 0% 50%}
+}
+@keyframes AnimationName { 
+  0%{background-position: 0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position: 0% 50%}
+}
+
 .App {
   text-align: center;
 }
 
 #headerTitle {
-  padding: 20px;
+  padding: 0 40px 0 40px;
 }
 
 #questionCard {
-  float: right;
+  /* float: right;
   margin-right: 105px;
-  margin-top: 200px;
+  margin-top: 200px; */
 }
 
 #questionTitle {
@@ -22,27 +49,32 @@
 
 .ui.card {
   width: 600px;
+  background-color: lightgray;
 }
 
 .ui.button {
   margin-top: 20px;
 }
 
+.ui.primary.button {
+  background-color: rgba(88,219,219,1);
+  color: rgba(36,52,60,100);
+}
+
 .ui.header {
   padding: 20px;
-}
-
-#nextBtn {
-  float: right;
-  margin-top: 300px;
-}
-
-#previousBtn {
-  float: left;
-  margin-left: 100px;
-  margin-top: 300px;
 }
 
 #infoData {
   margin-top: 200px;
 }
+
+#questionCardContainer {
+  align-content: center;
+}
+
+#categoryColumn {
+  background-color: darkgray;
+  height: auto;
+}
+

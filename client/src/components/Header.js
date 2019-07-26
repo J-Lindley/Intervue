@@ -34,7 +34,7 @@ class Header extends Component {
             to={this.props.auth ? '/questionsPage' : '/infoPage'}
             className="header item"
           >
-            <h2>InterVue</h2>
+            <h1 id="headerTitle">InterVue</h1>
           </Link>
         <div className="header item right">{this.renderContent()}</div>
       </div>
