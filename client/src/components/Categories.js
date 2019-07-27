@@ -3,17 +3,23 @@ import "../App.css";
 import axios from 'axios';
 
 class Categories extends Component {
+  state = {
+    questionType: []
+  }
   componentDidMount() {
-    axios.get("/api/questions/")
+    axios.get("api/questions/categories")
     .then(res => {
       console.log(res.data) 
-      this.setState({questions: res.data})}).catch(err => console.log(err))
+      this.setState({questionType: res.data})}).catch(err => console.log(err))
       
   }
   render() {
     return ( 
       <Fragment>
-        <h4>CATEGORIES</h4>
+        <h4>{this.state.questionType
+            .map(questionType => (
+              <div>{questionType}</div>
+            ))}</h4>
       </Fragment>
     );
   }

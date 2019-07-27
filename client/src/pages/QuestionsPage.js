@@ -9,8 +9,8 @@ class QuestionsPage extends Component {
     return (
       <Fragment>
         <div className="ui grid">
-          <div className="three wide column" id="categoryColumn">
-              <CategoryContainer />
+          <div className="four wide column" id="categoryColumn">
+              <CategoryContainer/>
           </div>
           <div className="ten wide column" id="questionContainer">
               <Question />
@@ -25,4 +25,4 @@ function mapStateToProps({ auth }) {
   return { auth };
 }
 
-export default connect(mapStateToProps) (QuestionsPage);
+export default connect(mapStateToProps)(QuestionsPage);

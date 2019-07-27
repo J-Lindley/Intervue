@@ -1,6 +1,6 @@
 body {
   font-family: 'Lora', serif;
-  color: whitesmoke;
+  color: white;
   background: linear-gradient(90deg, rgba(181,180,198,1) 0%, rgba(14,141,209,1) 51%, rgba(88,219,219,1) 100%);
   background-size: 600% 600%;
 
@@ -31,12 +31,6 @@ body {
 
 #headerTitle {
   padding: 0 40px 0 40px;
-}
-
-#questionCard {
-  /* float: right;
-  margin-right: 105px;
-  margin-top: 200px; */
 }
 
 #questionTitle {
@@ -74,7 +68,6 @@ body {
 }
 
 #categoryColumn {
-  background-color: darkgray;
-  height: auto;
+  color: black;
 }
 
