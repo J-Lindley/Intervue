@@ -22,7 +22,7 @@ class App extends Component {
           <div>
               <Router>
                 <Header />
-                  <div className="ui container">
+                  {/* <div className="ui container"> */}
                   <Switch>
                   <Route exact path="/" component={InfoPage}/>
                   <Route exact path="/InfoPage" component={InfoPage}/>
@@ -31,7 +31,7 @@ class App extends Component {
                   <Route exact path="/profile" component={ProfilePage}/>
                   {/* <Route component={NoMatch}/> */}
                   </Switch>
-                  </div>
+                  {/* </div> */}
               </Router>
             </div>
         }

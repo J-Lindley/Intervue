@@ -1,97 +1,20 @@
 import React, {Component, Fragment}from 'react';
-import {Link} from 'react-router-dom';
 import { connect } from "react-redux";
 import '../App.css';
-import SaveBtn from '../components/SaveBtn';
-import DeleteBtn from '../components/DeleteBtn';
-import axios from "axios";
-import Slider from "react-slick";
-const settings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1
-}
-
+import Question from '../components/Question';
+import CategoryContainer from '../components/CategoryContainer';
 
 class QuestionsPage extends Component {
-  
-  state={
-    category:"javascript",
-    questions:[]
-  }
-  componentDidMount() {
-    axios.get("/api/questions/category/" + this.state.category)
-    .then(res => {
-      console.log(res.data) 
-      this.setState({questions:res.data})}).catch(err => console.log(err))
-  }
-  
   render() {
     return (
       <Fragment>
-        <div className="ui left fixed vertical menu">
-          <Link
-            to={this.props.auth ? '/questionsPage' : '/infoPage'}
-            className="item" id="headerTitle"
-          >
-            <h2>InterVue</h2>
-          </Link>
-          <div className= "item">
-            <h4>Question Types: </h4>
+        <div className="ui grid">
+          <div className="four wide column" id="categoryColumn">
+              <CategoryContainer/>
           </div>
-          <div className="item">Behavioral</div>
-          <div className="item">JavaScript</div>
-          <div className="item">Java</div>
-          <div className="item">React</div>
-        </div>
-        
-        <div>
-          <button class="ui right labeled icon button" id="nextBtn">Next
-          <i class="right arrow icon"></i>
-          </button>
-        </div>
-        <Slider {...settings}>
-          {
-            this.state.questions.map(question=> (
-              <div>
-                {
-                  question.question
-                }
-              </div>
-            ))
-          }
-         </Slider>
-        <div class="ui card" id="questionCard">
-            <div class="content">
-            <div class="header" id='questionTitle'> Interview Question: </div>
-            <div class="header"> If we wanted to implement a method of tracking every click that the user made on the site, how would we want to do this?</div>
-            <div class="header" id='questionAnswerTitle'> Interview Answer: </div>
-              <div class="description">
-              <p>SEE ANSWER</p>
-              </div>
-            </div>
-          <div class="extra content">
-            <SaveBtn />
-            <DeleteBtn />
+          <div className="ten wide column" id="questionContainer">
+              <Question />
           </div>
-          <div class="extra content">
-            <span class="left floated like">
-              <i class="thumbs up outline icon"></i>
-              Helpful
-            </span>
-            <span class="right floated star">
-            <i class="thumbs down outline icon"></i>
-            Not Helpful
-            </span>
-          </div>
-        </div>
-
-        <div>
-          <button class="ui left labeled icon button" id="previousBtn">Previous
-          <i class="left arrow icon"></i>
-          </button>
         </div>
       </Fragment>
     );
@@ -102,4 +25,4 @@ function mapStateToProps({ auth }) {
   return { auth };
 }
 
-export default connect(mapStateToProps) (QuestionsPage);
+export default connect(mapStateToProps)(QuestionsPage);

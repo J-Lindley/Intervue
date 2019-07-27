@@ -4,7 +4,6 @@ const app = express();
 const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
-// const keys = require('./config/keys');
 const PORT = process.env.PORT || 5000;
 const routes = require("./routes");
 
@@ -42,8 +41,6 @@ require('./routes/authRoutes')(app);
 
 // Add routes, both API and view
 app.use(routes);
-console.log(process.env.cookieKey);
-console.log(process.env.googleClientID);
 
 app.listen(PORT, () => {
   console.log('Server is running on PORT:', PORT);
