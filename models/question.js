@@ -6,7 +6,7 @@ const questionSchema = new Schema({
   answer: String,
   company: [String],
   jobType: [String],
-  questionType: [String],
+  questionType: String,
   date: { type: Date, default: Date.now },
   yesScore: { type: Number, default: 0 },
   noScore: { type: Number, default: 0 },
