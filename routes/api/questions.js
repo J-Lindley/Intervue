@@ -5,13 +5,20 @@ const questionsController = require("../../controllers/questionsController");
 router.route("/")
   .get(questionsController.findAll);
 
+//Find all unique categories
+router.route("/categories")
+  .get(questionsController.allCategories);
+
+//Show questions from a given company
 router.route("/company/:company")
   .get(questionsController.findCompany);
 
+//Show questions in a given category
 router.route("/category/:category")
   .get(questionsController.findCategory)
 
-router.route("/api/newQuestion")
+//Add new questions
+router.route("/newQuestion")
   .post(questionsController.create)
 
 module.exports = router;

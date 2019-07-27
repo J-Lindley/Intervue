@@ -123,9 +123,7 @@ const questionSeed = [
   {
     question: "Write a method to decide if the given binary tree is a binary search tree or not.",
     answer: '',
-    company: "Amazon",
-    jobType: [],
-    questionType: []
+    company: "Amazon"
   }
 
 ];
