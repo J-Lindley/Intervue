@@ -44,6 +44,13 @@ module.exports = {
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+  },
+  allCategories: function(req, res) {
+    db.Question
+      .find()
+      .distinct('questionType')
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
   }
 
 }
