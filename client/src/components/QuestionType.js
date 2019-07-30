@@ -3,11 +3,18 @@ import '../App.css';
 
 class QuestionType extends Component {
   componentDidMount() {
-    this.loadQuestionType();
+    
   }
 
-  loadQuestionType = () => {
-    
+  state={
+    category:"javascript",
+    questions:[]
+  }
+  componentDidMount() {
+    axios.get("/api/questions/category/" + this.state.category)
+    .then(res => {
+      console.log(res.data) 
+      this.setState({questions:res.data})}).catch(err => console.log(err))
   }
 
 }
