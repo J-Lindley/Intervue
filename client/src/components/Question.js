@@ -28,22 +28,28 @@ class Question extends Component {
     }
 
     return (
-        <Slider {...settings}>
+        <Slider {...settings} id="questionBox">
           {this.state.questions
             .map(question => (
-              <div>{question.question}</div>
+              <div>
+                <h2 className="questionLabel"> Question </h2>
+                <h3>{question.question}</h3>
+                <h2 className="questionLabel"> Answer </h2>
+                <h3>{question.answer}</h3>
+                <SaveBtn />
+                <div class="extra content">
+                  <span class="left floated" id="thumbsUp">
+                  <i class="thumbs up outline icon"></i>
+                  Helpful
+                  </span>
+
+                  <span class="right floated" id="thumbsDown">
+                  <i class="thumbs down outline icon"></i>
+                  Not Helpful
+                  </span>
+                </div>
+              </div>
             ))}
-          <SaveBtn />
-          <div class="extra content">
-              <span class="left floated like">
-              <i class="thumbs up outline icon"></i>
-              Helpful
-              </span>
-              <span class="right floated star">
-              <i class="thumbs down outline icon"></i>
-              Not Helpful
-              </span>
-          </div>
         </Slider>
     );
   }

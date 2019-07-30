@@ -9,6 +9,7 @@ import QuestionsPage from './pages/QuestionsPage';
 import NewQuestion from './pages/NewQuestion';
 import InfoPage from './pages/InfoPage';
 import ProfilePage from './pages/ProfilePage';
+import CategoryPage from './pages/CategoryPage';
 // import NoMatch from './pages/404Page';
 
 class App extends Component {
@@ -22,16 +23,15 @@ class App extends Component {
           <div>
               <Router>
                 <Header />
-                  {/* <div className="ui container"> */}
                   <Switch>
                   <Route exact path="/" component={InfoPage}/>
                   <Route exact path="/InfoPage" component={InfoPage}/>
                   <Route exact path="/questionsPage" component={QuestionsPage} />
+                  <Route exact path="/categoryPage" component={CategoryPage} />
                   <Route exact path="/newQuestion" component={NewQuestion} />
                   <Route exact path="/profile" component={ProfilePage}/>
                   {/* <Route component={NoMatch}/> */}
                   </Switch>
-                  {/* </div> */}
               </Router>
             </div>
         }
