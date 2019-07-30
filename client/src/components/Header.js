@@ -29,7 +29,7 @@ class Header extends Component {
 
   render() {
     return (
-      <div className="ui borderless menu">
+      <div className="ui borderless menu" id="headerContainer">
           <Link
             to={this.props.auth ? '/questionsPage' : '/infoPage'}
             className="header item"
