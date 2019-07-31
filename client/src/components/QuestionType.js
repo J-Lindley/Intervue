@@ -32,9 +32,9 @@ class QuestionType extends Component {
             .map(question => (
               <div>
                 <h2 className="questionLabel"> Question </h2>
-                <h3>{question.question}</h3>
+                <h1>{question.question}</h1>
                 <h2 className="questionLabel"> Answer </h2>
-                <h3>{question.answer}</h3>
+                <h1>{question.answer}</h1>
                 <SaveBtn />
                 <div class="extra content">
                   <span class="left floated" id="thumbsUp">
