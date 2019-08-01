@@ -31,6 +31,7 @@ const questionSeed = [
   {
     question: "Explain how to detect the operating system on the client machine?",
     answer: "In order to detect the operating system on the client machine, the navigator.platform string (property) should be used.",
+    questionType: "General Programming"
     date: new Date(Date.now())
   },
   {
@@ -244,42 +245,42 @@ const questionSeed = [
     question: "What is HTML?"
     answer: "HTML is short for HyperText Markup Language and is the language of the World Wide Web. It is the standard text formatting language used for creating and displaying pages on the Web. HTML documents are made up of two things: the content and the tags that format it for proper display on pages."
     date: new Date(Date.now()),
-    questionType: "html"
+    questionType: "HTML"
     },
     {
     company: "SAP America Inc."
     question: "Do all HTML tags come in a pair?"
     answer: "No, there are single HTML tags that do not need a closing tag. Examples are the <img> tag and <br> tags."
     date: new Date(Date.now()),
-    questionType: "html"
+    questionType: "HTML"
     },
     {
     company: "Adobe"
     question: "What is an image map?"
     answer: "Image map lets you link to many different web pages using a single image. You can define shapes in images that you want to make part of an image mapping."
     date: new Date(Date.now()),
-    questionType: "html"
+    questionType: "HTML"
     },
     {
     company: "Intuit Inc."
     question: "Is there any way to keep list elements straight in an HTML file?"
     answer: "By using indents, you can keep the list elements straight. If you indent each subnested list in further than the parent list that contains it, you can at a glance determine the various lists and the elements that it contains."
     date: new Date(Date.now()),
-    questionType: "html"
+    questionType: "HTML"
     },
     {
     company: "New Relic"
     question: "What is CSS"
     answer: "CSS stands for Cascading Style Sheet. It is a popular styling language which is used with HTML to design websites."
     date: new Date(Date.now()),
-    questionType: "css"
+    questionType: "CSS"
     },
     {
     company: "Dropbox"
     question: "What are CSS frameworks?"
     answer: "CSS frameworks are the preplanned libraries which make easy and more standard compliant web page styling. The frequently used CSS frameworks are: Bootstrap, Foundation, Semantic UI, Gumby, Ulkit."
     date: new Date(Date.now()),
-    questionType: "css"
+    questionType: "CSS"
     },
     {
     company: "Microsoft"
