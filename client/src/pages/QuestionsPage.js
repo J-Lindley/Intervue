@@ -9,10 +9,10 @@ class QuestionsPage extends Component {
     return (
       <Fragment>
         <div className="ui grid">
-          <div className="four wide column" id="categoryColumn">
+          <div className="three wide column" id="categoryColumn">
               <CategoryContainer/>
           </div>
-          <div className="ten wide column" id="questionContainer">
+          <div className="twelve wide column" id="questionContainer">
               <Question />
           </div>
         </div>

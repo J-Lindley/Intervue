@@ -18,12 +18,11 @@ class Categories extends Component {
   render() {
     return ( 
       <Fragment>
-        <button className="ui primary button">
+        
           <h4>{this.state.questionType
             .map(questionType => (
-              <div>{questionType}</div>
+              <button className="ui primary button">{questionType}</button>
             ))}</h4>
-        </button>
       </Fragment>
     );
   }

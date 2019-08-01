@@ -1,7 +1,7 @@
 /* CSS to be carried through full APP and body */
 body {
   font-family: 'Lora', serif;
-  color: white;
+  color: navy;
   background: linear-gradient(90deg, rgba(181,180,198,1) 0%, rgba(14,141,209,1) 51%, rgba(88,219,219,1) 100%);
   background-size: 600% 600%;
 
@@ -39,8 +39,12 @@ body {
   padding: 20px;
 }
 
+#headerContainer {
+  opacity: .9;
+}
+
 #appLink {
-  color: rgba(88,219,219,1);
+  color: navy;
 }
 
 /* Basic Question and Category CSS */
@@ -62,7 +66,7 @@ body {
 }
 
 .ui.primary.button {
-  color: white;
+  color: navy;
   background-color: rgb(151, 148, 148);
   margin: 20px;
   box-shadow: 0px 0px 8px rgba(0,0,0,0.8);
