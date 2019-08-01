@@ -5,12 +5,13 @@ import SubmittedQuestions from '../components/SubmittedQuestions';
 
 
 class Profile extends Component {
-
   render() {
     return (
       <Fragment>
-        <SavedQuestions />
-        <SubmittedQuestions />
+        <div className="ui container">
+          <SavedQuestions />
+          <SubmittedQuestions />
+        </div>
       </Fragment>
     );
   }

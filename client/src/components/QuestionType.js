@@ -7,7 +7,7 @@ import SaveBtn from './SaveBtn';
 class QuestionType extends Component {
 
   state={
-    category:"",
+    category: "Javascript",
     questions:[]
   }
 
@@ -31,7 +31,7 @@ class QuestionType extends Component {
           {this.state.questions
             .map(question => (
               <div>
-                <h2 className="questionLabel"> Question </h2>
+                <h2 className="questionLabel"> {question.questionType} Questions </h2>
                 <h1>{question.question}</h1>
                 <h2 className="questionLabel"> Answer </h2>
                 <h1>{question.answer}</h1>

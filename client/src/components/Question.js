@@ -1,4 +1,4 @@
-import React, { Component }from 'react';
+import React, { Component, Fragment }from 'react';
 import '../App.css';
 import axios from 'axios';
 import Slider from 'react-slick';
@@ -28,6 +28,8 @@ class Question extends Component {
     }
 
     return (
+        <Fragment>
+
         <Slider {...settings} id="questionBox">
           {this.state.questions
             .map(question => (
@@ -51,6 +53,7 @@ class Question extends Component {
               </div>
             ))}
         </Slider>
+        </Fragment>
     );
   }
 }
