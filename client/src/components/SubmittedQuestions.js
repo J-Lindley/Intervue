@@ -21,11 +21,11 @@ class SubmittedQuestions extends Component {
     )
     // return (
     //   // <Fragment>
-    //   // <div class="ui raised segments">
-    //   //   <h3 class="ui header">Submitted Questions</h3>
+    //   // <div className="ui raised segments">
+    //   //   <h3 className="ui header">Submitted Questions</h3>
     //   //   {this.state.submittedQuestions
     //   //   .map(submittedQuestion => (
-    //   //     <div class="ui segment">
+    //   //     <div className="ui segment">
     //   //       <h2 className="questionLabel"> Question </h2>
     //   //       <h3>{submittedQuestion.question}</h3>
     //   //       <h2 className="questionLabel"> Answer </h2>

@@ -5,7 +5,9 @@ import QuestionForm from '../components/QuestionForm';
 class NewQuestion extends Component {
   render() {
     return (
-      <QuestionForm />
+      <div className="ui container">
+        <QuestionForm />
+      </div>
     )
   }
 }

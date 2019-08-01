@@ -1,21 +1,24 @@
 import React, {Component, Fragment}from 'react';
 import { connect } from "react-redux";
 import '../App.css';
-import Question from '../components/Question';
 import CategoryContainer from '../components/CategoryContainer';
+import QuestionContainer from '../components/QuestionContainer';
 
 class QuestionsPage extends Component {
   render() {
     return (
       <Fragment>
-        <div className="ui grid">
-          <div className="four wide column" id="categoryColumn">
+        <div className="ui container">
+          <div className="ui grid">
+            <div className="five wide column" id="categoryColumn">
               <CategoryContainer/>
-          </div>
+            </div>
           <div className="ten wide column" id="questionContainer">
-              <Question />
+              <QuestionContainer/>
+          </div>
           </div>
         </div>
+        
       </Fragment>
     );
   }

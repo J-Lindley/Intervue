@@ -1,7 +1,7 @@
 /* CSS to be carried through full APP and body */
 body {
   font-family: 'Lora', serif;
-  color: white;
+  color: navy;
   background: linear-gradient(90deg, rgba(181,180,198,1) 0%, rgba(14,141,209,1) 51%, rgba(88,219,219,1) 100%);
   background-size: 600% 600%;
 
@@ -39,8 +39,17 @@ body {
   padding: 20px;
 }
 
+#headerContainer {
+  opacity: .9;
+}
+
 #appLink {
-  color: rgba(88,219,219,1);
+  color: navy;
+  padding-bottom: 15px;
+}
+
+#logo {
+  margin: 10px;
 }
 
 /* Basic Question and Category CSS */
@@ -62,7 +71,7 @@ body {
 }
 
 .ui.primary.button {
-  color: white;
+  color: navy;
   background-color: rgb(151, 148, 148);
   margin: 20px;
   box-shadow: 0px 0px 8px rgba(0,0,0,0.8);
@@ -82,20 +91,18 @@ body {
   font-weight: bold;
 }
 
-#questionContainer {
-  background-color: rgba(14,141,209,1);
-  padding: 40px;
-  margin-top: 100px;
-  border-radius: 7px;
-}
-
 .questionLabel {
   text-decoration: underline;
-  margin-right: 20px;
 }
 
 #questionContainer 
 {
+  background-color: rgba(14,141,209,1);
+  padding: 40px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  margin-left: 50px;
+  border-radius: 7px;
     position:relative;
     -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
        -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;

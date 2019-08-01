@@ -8,12 +8,14 @@ class CategoryPage extends Component {
   render() {
     return (
       <Fragment>
-        <div className="ui grid">
-          <div className="four wide column" id="categoryColumn">
+        <div className="ui container">
+          <div className="ui grid">
+            <div className="four wide column" id="categoryColumn">
               <CategoryContainer/>
-          </div>
-          <div className="ten wide column" id="questionContainer">
+            </div>
+            <div className="ten wide column" id="questionContainer">
               <QuestionType />
+            </div>
           </div>
         </div>
       </Fragment>
