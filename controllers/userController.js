@@ -19,8 +19,7 @@ module.exports = {
   findSaved: function(req, res) {
     db.User
       .findOne({googleId: req.params.user}, 'saved')
-      .populate('question')
-      .sort({date: -1})
+      .populate('saved')
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

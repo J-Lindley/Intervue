@@ -10,7 +10,7 @@ const questionSchema = new Schema({
   date: { type: Date, default: Date.now },
   yesScore: { type: Number, default: 0 },
   noScore: { type: Number, default: 0 },
-  _user: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
+  // _user: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
 });
 
 const Question = mongoose.model("Question", questionSchema);
