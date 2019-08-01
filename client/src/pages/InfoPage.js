@@ -14,11 +14,10 @@ render() {
     <div id="infoData">
       <h1>Hello, Welcome to InterVue. </h1>
 
-      <h3>A place for new developers to get access to common interview questions. 
-      We found popular interview questions and put them in a serchable format. 
-       Search by programming language, to capture questions specific to your job search.  
-       Create a profile to archive the questions you want keep handy.
-      </h3>
+      <h3>A one stop shop to help developers prepare for their for dream job interview. </h3>
+      <h3>Sign up/Login with Google to create a profile which will allow you to save questions to your profile or click the "Get Started" button below to browse questions!</h3>  
+      <h2>Good luck!</h2>
+      
     </div>
     
     <div>

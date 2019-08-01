@@ -145,7 +145,7 @@ const questionSeed = [
     question: "What is the drawback of creating true private methods in JavaScript?"
     answer: "One of the drawbacks of creating true private methods in JavaScript is that they are very memory-inefficient, as a new copy of the method would be created for each instance."
     date: new Date(Date.now()),
-    questionType: "javascript"
+    questionType: "Javascript"
   },
 
   {
@@ -153,7 +153,7 @@ const questionSeed = [
     question: "What is a “closure” in JavaScript?"
     answer: "A closure is a function defined inside another function (called the parent function), and has access to variables that are declared and defined in the parent function scope."
     date: new Date(Date.now()),
-    questionType: "javascript"
+    questionType: "Javascript"
   },
   {
     company: "Retail Zipline"
@@ -393,7 +393,6 @@ const questionSeed = [
     date: new Date(Date.now()),
     questionType: "API"
     },
-
 ];
 
 db.Question
