@@ -18,7 +18,8 @@ module.exports = {
   },
   findSaved: function(req, res) {
     db.User
-      .find(req.params.user)
+      .findOne({googleId: req.params.user}, 'saved')
+      .populate('question')
       .sort({date: -1})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -27,6 +28,12 @@ module.exports = {
     db.User
       .find(req.params.user)
       .sort({date: -1})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  saveQuestion: function(req, res) {
+    db.User 
+      .findOneAndUpdate({googleId: req.body.uid}, {$push: {saved: req.body.qid}})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   }

@@ -7,15 +7,33 @@ import SaveBtn from './SaveBtn';
 class Question extends Component {
 
   state = {
-    questions: []
+    questions: [],
+    userId: "null"
   }
 
   componentDidMount() {
     axios.get("/api/questions/")
     .then(res => {
       console.log(res.data) 
-      this.setState({questions: res.data})}).catch(err => console.log(err))
+      this.setState({questions: res.data})}).catch(err => console.log(err));
+    
       
+    }
+
+  saveQuestion = id => {
+    //first get and store user id
+    axios.get("/api/current_user")
+    .then(res => {
+      console.log(res.data.googleId);
+      console.log(id);
+      
+      let user = res.data.googleId;
+      axios.put("api/user/saveQuestion", {qid: id, uid: user})
+        .then(res => {
+          console.log(res);
+          
+        })
+    })
   }
   
   render() {
@@ -36,7 +54,7 @@ class Question extends Component {
                 <h3>{question.question}</h3>
                 <h2 className="questionLabel"> Answer </h2>
                 <h3>{question.answer}</h3>
-                <SaveBtn />
+                <SaveBtn qid={question._id} onClick={ () => this.saveQuestion(question._id)}/>
                 <div class="extra content">
                   <span class="left floated" id="thumbsUp">
                   <i class="thumbs up outline icon"></i>
