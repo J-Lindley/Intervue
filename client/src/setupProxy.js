@@ -6,4 +6,5 @@ module.exports = function(app) {
   app.use(proxy('/api/questions/company/*', {target: 'http://localhost:5000/'}));
   app.use(proxy('/api/questions/category/*', {target: 'http://localhost:5000/'}));
   app.use(proxy('/api/questions/*', {target: 'http://localhost:5000/'}));
+  app.use(proxy('/api/user/*', {target: 'http://localhost:5000/'}));
 }
