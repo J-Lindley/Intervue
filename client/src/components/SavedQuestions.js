@@ -25,29 +25,26 @@ class SavedQuestions extends Component {
     })
   }
 
-
-  
-
   render() {
     return (
-      <div class="ui raised segments">
-        <h3 class="ui header">Saved Questions</h3>
+      <div className="ui raised segments">
+        <h3 className="ui header">Saved Questions</h3>
         {this.state.savedQuestions
         .map(savedQuestion => (
-          <div class="ui segment">
+          <div className="ui segment">
             <h2 className="questionLabel"> Question </h2>
             <h3>{savedQuestion.question}</h3>
             <h2 className="questionLabel"> Answer </h2>
             <h3>{savedQuestion.answer}</h3>
             <DeleteBtn />
-            <div class="extra content">
-                <span class="left floated" id="thumbsUp">
-                <i class="thumbs up outline icon"></i>
+            <div className="extra content">
+                <span className="left floated" id="thumbsUp">
+                <i className="thumbs up outline icon"></i>
                 Helpful
                 </span>
 
-                <span class="right floated" id="thumbsDown">
-                <i class="thumbs down outline icon"></i>
+                <span className="right floated" id="thumbsDown">
+                <i className="thumbs down outline icon"></i>
                 Not Helpful
                 </span>
                 </div>

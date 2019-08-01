@@ -23,22 +23,22 @@ class QuestionForm extends Component {
   render() {
     return ( 
       <div className="ui container">
-            <form class="ui form">
-                <div class="field">
+            <form className="ui form">
+                <div className="field">
                   <label className="formLabel">Question: </label>
                   <textarea placeholder="Please submit the question here. (Required) " type="text"></textarea>
                 </div>
-                <div class="field">
+                <div className="field">
                   <label className="formLabel">Answer: </label>
                   <textarea placeholder="Please submit the question answer here. (Required) " type="text"></textarea>
                 </div>
-                <div class="field">
+                <div className="field">
                   <label className="formLabel">Company: </label>
                   <input placeholder="Company (if applicable)" type="text"></input>
                 </div>
                 <div className="field">
                   <label className="formLabel">Question Category: </label>
-                  <select class="ui search dropdown">
+                  <select className="ui search dropdown">
                     <option value="">Select Category (Required)</option>
                     <option value="javascript">Javascript</option>
                     <option value="behavioral">Behavioral</option>
@@ -53,7 +53,7 @@ class QuestionForm extends Component {
                     <option value="AR">Argentina</option>
                   </select>
                 </div>
-                <div class="ui submit button">Submit Question</div>
+                <div className="ui submit button">Submit Question</div>
             </form> 
         </div>
     );

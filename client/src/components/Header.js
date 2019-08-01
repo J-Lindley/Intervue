@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import logo from "../images/rocket.png";
 import "../App.css";
 
 class Header extends Component {
@@ -34,7 +35,9 @@ class Header extends Component {
             to={this.props.auth ? '/questionsPage' : '/infoPage'}
             className="header item"
           >
+            <img src={logo} alt="Logo" id="logo"/>
             <h1 id="appLink">InterVue</h1>
+
           </Link>
         <div className="header item right">{this.renderContent()}</div>
       </div>

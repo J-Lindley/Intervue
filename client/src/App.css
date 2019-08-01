@@ -45,6 +45,11 @@ body {
 
 #appLink {
   color: navy;
+  padding-bottom: 15px;
+}
+
+#logo {
+  margin: 10px;
 }
 
 /* Basic Question and Category CSS */

@@ -36,14 +36,14 @@ class QuestionType extends Component {
                 <h2 className="questionLabel"> Answer </h2>
                 <h1>{question.answer}</h1>
                 <SaveBtn />
-                <div class="extra content">
-                  <span class="left floated" id="thumbsUp">
-                  <i class="thumbs up outline icon"></i>
+                <div className="extra content">
+                  <span className="left floated" id="thumbsUp">
+                  <i className="thumbs up outline icon"></i>
                   Helpful
                   </span>
 
-                  <span class="right floated" id="thumbsDown">
-                  <i class="thumbs down outline icon"></i>
+                  <span className="right floated" id="thumbsDown">
+                  <i className="thumbs down outline icon"></i>
                   Not Helpful
                   </span>
                 </div>
