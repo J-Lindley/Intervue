@@ -6,7 +6,7 @@ class CategoryContainer extends Component {
   render() {
     return ( 
       <Fragment>
-        <h3>Question Types:</h3>
+        <h3 className="questionLabel">Question Categories</h3>
         <Categories />
       </Fragment>
     );

@@ -11,7 +11,6 @@ module.exports = {
   },
   findCompany: function(req, res) {
     console.log(req.params.company);
-    console.log("hello");
     db.Question 
       .find({company: req.params.company})
       .sort({date: -1})

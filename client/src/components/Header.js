@@ -29,12 +29,12 @@ class Header extends Component {
 
   render() {
     return (
-      <div className="ui borderless menu">
+      <div className="ui borderless menu" id="headerContainer">
           <Link
             to={this.props.auth ? '/questionsPage' : '/infoPage'}
             className="header item"
           >
-            <h1>InterVue</h1>
+            <h1 id="appLink">InterVue</h1>
           </Link>
         <div className="header item right">{this.renderContent()}</div>
       </div>
