@@ -145,7 +145,7 @@ const questionSeed = [
     question: "What is the drawback of creating true private methods in JavaScript?"
     answer: "One of the drawbacks of creating true private methods in JavaScript is that they are very memory-inefficient, as a new copy of the method would be created for each instance."
     date: new Date(Date.now()),
-    questionType: "javascript"
+    questionType: "Javascript"
   },
 
   {
@@ -153,14 +153,14 @@ const questionSeed = [
     question: "What is a “closure” in JavaScript?"
     answer: "A closure is a function defined inside another function (called the parent function), and has access to variables that are declared and defined in the parent function scope."
     date: new Date(Date.now()),
-    questionType: "javascript"
+    questionType: "Javascript"
   },
   {
     company: "Retail Zipline"
     question: "What is the significance of, and reason for, wrapping the entire content of a JavaScript source file in a function block?"
     answer: "This is an increasingly common practice, employed by many popular JavaScript libraries (jQuery, Node.js, etc.). This technique creates a closure around the entire contents of the file which, perhaps most importantly, creates a private namespace and thereby helps avoid potential name clashes between different JavaScript modules and libraries."
     date: new Date(Date.now()),
-    questionType: "javascript"
+    questionType: "Javascript"
     },
     {
     company: "Artemis"
