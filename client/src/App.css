@@ -72,9 +72,15 @@ body {
 
 .ui.primary.button {
   color: navy;
-  background-color: #D65B09;
+  background-color: whitesmoke;
   margin: 20px;
   box-shadow: 0px 0px 8px rgba(0,0,0,0.8);
+  opacity: .7;
+  border-radius: 7px;
+}
+
+#categoryBtn {
+  width: 120px;
 }
 
 #infoData {
@@ -97,7 +103,7 @@ body {
 
 #questionContainer, #savedQuestionContainer, #newQuestionContainer
 {
-  background-color: #EB9D6A;
+  background-color: #CFCCC9;
   padding: 40px;
   margin-top: 80px;
   margin-bottom: 80px;
