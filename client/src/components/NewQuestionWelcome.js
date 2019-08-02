@@ -19,11 +19,12 @@ class NewQuestionWelcome extends Component {
       <Fragment>
       {this.state.users
       .map(user => (
-      <div id ="userWelcome">
-        <div>
-          <h1>{user.userName} please add your question using the form below! </h1>
+        <div id="userWelcome">
+          <div>
+            <h1>{user.userName} please add your question using the form below! </h1>
+          </div>
         </div>
-      </div>
+        
       ))}
       </Fragment>
     )

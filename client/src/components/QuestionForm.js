@@ -24,27 +24,27 @@ class QuestionForm extends Component {
             <NewQuestionWelcome />
           </div>
           <div class="ui bottom attached segment">
-              <form className="ui form">
+              <form className="ui form" id="newQuestionContainer">
               <div className="field">
-                <label className="formLabel">Question: </label>
+                <label className="formLabel"><h3>Question: </h3></label>
                 <textarea
                   placeholder="Please submit the question here. (Required) "
                   type="text"
                 />
               </div>
               <div className="field">
-                <label className="formLabel">Answer: </label>
+                <label className="formLabel"><h3>Answer: </h3></label>
                 <textarea
                   placeholder="Please submit the question answer here. (Required) "
                   type="text"
                 />
               </div>
               <div className="field">
-                <label className="formLabel">Company: </label>
+                <label className="formLabel"><h3>Company: </h3></label>
                 <input placeholder="Company (if applicable)" type="text" />
               </div>
               <div className="field">
-                <label className="formLabel">Question Category: </label>
+                <label className="formLabel"><h3>Question Category: </h3></label>
                 <select className="ui search dropdown">
                   <option value="">Select Category (Required)</option>
                   {this.state.questionType
@@ -53,7 +53,7 @@ class QuestionForm extends Component {
                   ))}
                 </select>
               </div>
-              <div className="ui submit button">Submit Question</div>
+              <div className="ui primary button">Submit Question</div>
             </form>
           </div>
         </div>

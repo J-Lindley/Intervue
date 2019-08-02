@@ -15,21 +15,13 @@ class SavedQuestions extends Component {
     //first get and store user id
     axios.get("/api/current_user")
     .then(res => {
-      console.log(res.data.googleId);
-      
       
       let user = res.data.googleId;
       axios.get(`api/user/savedQuestions/${user}`)
         .then(res => {
-          console.log(res.data);
           this.setState({savedQuestions: res.data});
         })
     })
-  }
-
-
-  deleteQuestion = id => {
-    
   }
 
   render() {

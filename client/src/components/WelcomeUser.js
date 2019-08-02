@@ -10,7 +10,6 @@ class WelcomeUser extends Component {
   componentDidMount() {
     axios.get("api/user/findUser")
     .then(res => {
-      console.log(res.data) 
       this.setState({users: res.data})}).catch(err => console.log(err));  
   }
 
@@ -19,7 +18,7 @@ class WelcomeUser extends Component {
       <Fragment>
       {this.state.users
       .map(user => (
-      <div id ="userWelcome">
+      <div id="userWelcome">
         <div>
           <h1>Hello, {user.userName}! </h1>
         </div>

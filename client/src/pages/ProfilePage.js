@@ -13,7 +13,7 @@ class Profile extends Component {
             <div className="ui tabular menu">
             <WelcomeUser />
             </div>
-            <div class="ui bottom attached segment">
+            <div className="ui bottom attached segment">
               <div className="ui grid">
                 <div className="eight wide column" id="categoryColumn">
                   <SavedQuestions /> 

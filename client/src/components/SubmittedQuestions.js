@@ -1,40 +1,52 @@
-import React, { Component }from 'react';
+import React, { Component, Fragment }from 'react';
 import '../App.css';
 import axios from 'axios';
 
 class SubmittedQuestions extends Component {
 
   state = {
-    submittedQuestions: []
+    submittedQuestions: {
+      submitted: []
+    }
   }
 
   componentDidMount() {
-    axios.get("api/user/submittedQuestions")
+    axios.get("/api/current_user")
     .then(res => {
+
+      let user = res.data.googleId;
+      axios.get(`api/user/submittedQuestions/${user}`)
+      .then(res => {
       console.log(res.data) 
-      this.setState({submittedQuestions: res.data})}).catch(err => console.log(err))  
+      this.setState({submittedQuestions: res.data})}) 
+    })
   }
 
+
   render() {
-    return(
-      <div>Submitted Questions</div>
+    return (
+      <div>Hello</div>
+      // <Fragment>
+      // <h3 className="ui header" id="submittedQuestionTitle">Submitted Questions</h3>
+      //   {this.state.submittedQuestions.submitted.length ? this.state.submittedQuestions.submitted
+      //   .map(submittedQuestion => (
+      //     <div className="ui segment" id="submittedQuestionContainer">
+      //       <div className="submittedQuestionDetails">
+      //         <h3>Question Category: </h3> 
+      //         <strong>{submittedQuestion.questionType}</strong>
+      //       </div>
+      //       <div className="submittedQuestionDetails">
+      //         <h3>Question: </h3> 
+      //         <strong>{submittedQuestion.question}</strong>
+      //       </div>
+      //       <div className="submittedQuestionDetails">
+      //         <h3>Answer: </h3> 
+      //         <strong>{submittedQuestion.answer}</strong>
+      //       </div>
+      //     </div>
+      //   )) : ""}
+      // </Fragment>
     )
-    // return (
-    //   // <Fragment>
-    //   // <div className="ui raised segments">
-    //   //   <h3 className="ui header">Submitted Questions</h3>
-    //   //   {this.state.submittedQuestions
-    //   //   .map(submittedQuestion => (
-    //   //     <div className="ui segment">
-    //   //       <h2 className="questionLabel"> Question </h2>
-    //   //       <h3>{submittedQuestion.question}</h3>
-    //   //       <h2 className="questionLabel"> Answer </h2>
-    //   //       <h3>{submittedQuestion.answer}</h3>
-    //   //     </div>
-    //   //   ))}
-    //   // </div>
-    //   // </Fragment>
-    // )
   }
 }
 

@@ -72,7 +72,7 @@ body {
 
 .ui.primary.button {
   color: navy;
-  background-color: rgb(151, 148, 148);
+  background-color: #D65B09;
   margin: 20px;
   box-shadow: 0px 0px 8px rgba(0,0,0,0.8);
 }
@@ -95,9 +95,9 @@ body {
   text-decoration: underline;
 }
 
-#questionContainer 
+#questionContainer, #savedQuestionContainer, #newQuestionContainer
 {
-  background-color: rgba(14,141,209,1);
+  background-color: #EB9D6A;
   padding: 40px;
   margin-top: 80px;
   margin-bottom: 80px;
@@ -108,7 +108,7 @@ body {
        -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
             box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
-#questionContainer:before, .questionContainer:after
+#questionContainer:before, .questionContainer:after, #savedQuestionContainer:before, #savedQuestionContainer:after, #newQuestionContainer:before, #newQuestionContainer::after
 {
     content:"";
     position:absolute;
@@ -123,7 +123,7 @@ body {
     -moz-border-radius:100px / 10px;
     border-radius:100px / 10px;
 }
-#questionContainer:after
+#questionContainer:after, #savedQuestionContainer:after, #newQuestionContainer:after
 {
     right:10px;
     left:auto;
@@ -136,7 +136,7 @@ body {
 
 .formLabel {
   text-align: left;
-  color: black;
+  color:navy !important;
   font-weight: 700;
 }
 
@@ -161,7 +161,11 @@ body {
 
 #savedQuestionContainer {
   text-align: left;
-  background-color: lightgray;
+  margin: 0px 0px 10px 0px;
+}
+
+#newQuestionContainer {
+  margin: 0px 0px 10px 0px;
 }
 
 .ui.bottom.attached.segment {
@@ -171,6 +175,10 @@ body {
 
 .savedQuestionDetails {
   margin-bottom: 10px;
+}
+
+.ui.search.dropdown {
+  color: navy;
 }
 
 
