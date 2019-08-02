@@ -1,10 +1,22 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import axios from 'axios';
 import logo from "../images/rocket.png";
 import "../App.css";
 
 class Header extends Component {
+
+  state = {
+    users:[]
+  }
+
+  componentDidMount() {
+    axios.get("api/user/findUser")
+    .then(res => {
+      this.setState({users: res.data})}).catch(err => console.log(err));  
+  }
+
   renderContent() {
     switch (this.props.auth) {
       case null:
@@ -15,16 +27,24 @@ class Header extends Component {
         return (
           <Fragment>
             <div className="header item">
-              <a href="/newQuestion">Add Interview Question</a>
+              <a href="/questionsPage">Home</a>
             </div>
+            {this.state.users
+            .map(user => (
             <div className="header item">
+              <img src={user.userPhoto} alt="userPhoto" id="userPhoto" />
               <a href="/profile">Profile</a>
             </div>
+            ))}
+            <div className="header item">
+              <a href="/newQuestion">Add Interview Question</a>
+            </div>
+          
             <div className="header item">
               <a href="/api/logout">Logout</a>
             </div>
           </Fragment>
-        );
+        )
     }
   }
 

@@ -1,15 +1,33 @@
-import React, { Component }from 'react';
+import React, { Component, Fragment }from 'react';
 import '../App.css';
 import axios from 'axios';
-import DeleteBtn from './DeleteBtn';
 
 class WelcomeUser extends Component {
-  render() {
-    return(
-      <div></div>
-    )
+  state = {
+    users:[]
   }
 
+  componentDidMount() {
+    axios.get("api/user/findUser")
+    .then(res => {
+      console.log(res.data) 
+      this.setState({users: res.data})}).catch(err => console.log(err));  
+  }
+
+  render() {
+    return(
+      <Fragment>
+      {this.state.users
+      .map(user => (
+      <div id ="userWelcome">
+        <div>
+          <h1>Hello, {user.userName}! </h1>
+        </div>
+      </div>
+      ))}
+      </Fragment>
+    )
+  }
 }
 
 export default WelcomeUser;

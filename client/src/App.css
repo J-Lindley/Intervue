@@ -147,6 +147,29 @@ body {
   margin-top: 50px;
 }
 
+/* Profile Styling */
+#userWelcome {
+  text-align: left;
+  margin: 20px;
+}
+
+#userPhoto {
+  width: 40px;
+  height: 40px;
+  border-radius: 7px;
+  margin-right: 10px;
+}
+
+#savedQuestionContainer {
+  text-align: left;
+  opacity: .7;
+}
+
+#savedQuestionTitle {
+  border-radius: 7px;
+  opacity: .7;
+}
+
 
 
 
