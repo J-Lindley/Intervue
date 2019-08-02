@@ -144,7 +144,6 @@ body {
   background-color: lightgray;
   padding: 20px;
   border-radius: 7px;
-  margin-top: 50px;
 }
 
 /* Profile Styling */
@@ -168,6 +167,11 @@ body {
 #savedQuestionTitle {
   border-radius: 7px;
   opacity: .7;
+}
+
+.ui.bottom.attached.segment {
+  background-color: transparent;
+  border-color: transparent;
 }
 
 
