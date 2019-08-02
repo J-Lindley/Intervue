@@ -39,9 +39,18 @@ class SavedQuestions extends Component {
         {this.state.savedQuestions.saved.length ? this.state.savedQuestions.saved
         .map(savedQuestion => (
           <div className="ui segment" id="savedQuestionContainer">
-            <h4>Question Category: {savedQuestion.questionType}</h4>
-            <h4>Question: {savedQuestion.question}</h4>
-            <h4>Answer: {savedQuestion.answer}</h4>
+            <div className="savedQuestionDetails">
+              <h3>Question Category: </h3> 
+              <strong>{savedQuestion.questionType}</strong>
+            </div>
+            <div className="savedQuestionDetails">
+              <h3>Question: </h3> 
+              <strong>{savedQuestion.question}</strong>
+            </div>
+            <div className="savedQuestionDetails">
+              <h3>Answer: </h3> 
+              <strong>{savedQuestion.answer}</strong>
+            </div>
             <DeleteBtn />
           </div>
         )) : ""}

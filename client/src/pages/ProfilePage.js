@@ -14,11 +14,15 @@ class Profile extends Component {
             <WelcomeUser />
             </div>
             <div class="ui bottom attached segment">
-                <SavedQuestions />
+              <div className="ui grid">
+                <div className="eight wide column" id="categoryColumn">
+                  <SavedQuestions /> 
+                </div>
+                <div className="eight wide column" id="categoryColumn">
+                  <SubmittedQuestions />
+                </div>
+              </div>
             </div>
-            <div class="ui bottom attached segment">
-              <SubmittedQuestions />
-            </div> 
         </div>
       </Fragment>
     );

@@ -36,7 +36,7 @@ body {
 }
 
 .ui.header {
-  padding: 20px;
+  color: navy;
 }
 
 #headerContainer {
@@ -161,17 +161,16 @@ body {
 
 #savedQuestionContainer {
   text-align: left;
-  opacity: .7;
-}
-
-#savedQuestionTitle {
-  border-radius: 7px;
-  opacity: .7;
+  background-color: lightgray;
 }
 
 .ui.bottom.attached.segment {
   background-color: transparent;
   border-color: transparent;
+}
+
+.savedQuestionDetails {
+  margin-bottom: 10px;
 }
 
 

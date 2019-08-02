@@ -5,20 +5,16 @@ import NewQuestionWelcome from "./NewQuestionWelcome";
 
 class QuestionForm extends Component {
   state = {
-    question: "",
-    answer: "",
-    company: "",
-    questionType: "",
-    user: ""
-  };
-
-  componentDidMount() {
-    this.saveMyQuestion();
+    questionType: []
   }
 
-  saveMyQuestion = () => {
-    axios.post("api/user/savedQuestions");
-  };
+  componentDidMount() {
+    axios.get("api/questions/categories")
+    .then(res => {
+      console.log(res.data) 
+      this.setState({questionType: res.data})}).catch(err => console.log(err))
+      
+  }
 
   render() {
     return (
@@ -51,17 +47,10 @@ class QuestionForm extends Component {
                 <label className="formLabel">Question Category: </label>
                 <select className="ui search dropdown">
                   <option value="">Select Category (Required)</option>
-                  <option value="javascript">Javascript</option>
-                  <option value="behavioral">Behavioral</option>
-                  <option value="node">Node</option>
-                  <option value="react">React</option>
-                  <option value="express">Express</option>
-                  <option value="algorthims">Algorthims</option>
-                  <option value="AO" />
-                  <option value="AI">Anguilla</option>
-                  <option value="AQ">Antarctica</option>
-                  <option value="AG">Antigua and Barbuda</option>
-                  <option value="AR">Argentina</option>
+                  {this.state.questionType
+                  .map(questionType => (
+                    <option value={questionType}>{questionType}</option>
+                  ))}
                 </select>
               </div>
               <div className="ui submit button">Submit Question</div>
