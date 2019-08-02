@@ -1,4 +1,4 @@
-import React, { Component }from 'react';
+import React, { Component, Fragment }from 'react';
 import '../App.css';
 import axios from 'axios';
 import DeleteBtn from './DeleteBtn';
@@ -6,51 +6,47 @@ import DeleteBtn from './DeleteBtn';
 class SavedQuestions extends Component {
 
   state = {
-    savedQuestions: []
+    savedQuestions: {
+      saved: []
+    }
   }
 
   componentDidMount() {
- 
     //first get and store user id
     axios.get("/api/current_user")
     .then(res => {
-      console.log(res.data.googleId);
       
       let user = res.data.googleId;
       axios.get(`api/user/savedQuestions/${user}`)
         .then(res => {
-          console.log(res.data);
-          
+          this.setState({savedQuestions: res.data});
         })
     })
   }
 
   render() {
     return (
-      <div className="ui raised segments">
-        <h3 className="ui header">Saved Questions</h3>
-        {this.state.savedQuestions
+      <Fragment>
+        <h3 className="ui header" id="savedQuestionTitle">Saved Questions</h3>
+        {this.state.savedQuestions.saved.length ? this.state.savedQuestions.saved
         .map(savedQuestion => (
-          <div className="ui segment">
-            <h2 className="questionLabel"> Question </h2>
-            <h3>{savedQuestion.question}</h3>
-            <h2 className="questionLabel"> Answer </h2>
-            <h3>{savedQuestion.answer}</h3>
+          <div className="ui segment" id="savedQuestionContainer">
+            <div className="savedQuestionDetails">
+              <h3>Question Category: </h3> 
+              <strong>{savedQuestion.questionType}</strong>
+            </div>
+            <div className="savedQuestionDetails">
+              <h3>Question: </h3> 
+              <strong>{savedQuestion.question}</strong>
+            </div>
+            <div className="savedQuestionDetails">
+              <h3>Answer: </h3> 
+              <strong>{savedQuestion.answer}</strong>
+            </div>
             <DeleteBtn />
-            <div className="extra content">
-                <span className="left floated" id="thumbsUp">
-                <i className="thumbs up outline icon"></i>
-                Helpful
-                </span>
-
-                <span className="right floated" id="thumbsDown">
-                <i className="thumbs down outline icon"></i>
-                Not Helpful
-                </span>
-                </div>
           </div>
-        ))}
-      </div>
+        )) : ""}
+      </Fragment>
     )
   }
 }

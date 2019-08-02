@@ -9,10 +9,16 @@ router.route("/")
 router.route("/savedQuestions/:user")
 .get(userController.findSaved)
 
+router.route("/findUser")
+.get(userController.findUser);
+
 router.route("/submittedQuestions")
 .get(userController.findSubmitted)
 
 router.route("/saveQuestion")
 .put(userController.saveQuestion)
+
+router.route("/deleteQuestion")
+.delete(userController.deleteQuestion)
 
 module.exports = router;

@@ -21,7 +21,7 @@ class Categories extends Component {
         
           <h4>{this.state.questionType
             .map(questionType => (
-              <button className="ui primary button">{questionType}</button>
+              <button className="ui primary button" id="categoryBtn">{questionType}</button>
             ))}</h4>
       </Fragment>
     );

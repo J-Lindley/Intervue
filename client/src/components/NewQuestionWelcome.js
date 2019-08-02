@@ -2,7 +2,7 @@ import React, { Component, Fragment }from 'react';
 import '../App.css';
 import axios from 'axios';
 
-class WelcomeUser extends Component {
+class NewQuestionWelcome extends Component {
   state = {
     users:[]
   }
@@ -10,6 +10,7 @@ class WelcomeUser extends Component {
   componentDidMount() {
     axios.get("api/user/findUser")
     .then(res => {
+      console.log(res.data) 
       this.setState({users: res.data})}).catch(err => console.log(err));  
   }
 
@@ -18,15 +19,16 @@ class WelcomeUser extends Component {
       <Fragment>
       {this.state.users
       .map(user => (
-      <div id="userWelcome">
-        <div>
-          <h1>Hello, {user.userName}! </h1>
+        <div id="userWelcome">
+          <div>
+            <h1>{user.userName} please add your question using the form below! </h1>
+          </div>
         </div>
-      </div>
+        
       ))}
       </Fragment>
     )
   }
 }
 
-export default WelcomeUser;
+export default NewQuestionWelcome;
