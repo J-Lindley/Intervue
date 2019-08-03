@@ -13,19 +13,21 @@ class QuestionsPage extends Component {
             <div className="five wide column" id="categoryColumn">
               <CategoryContainer/>
             </div>
-          <div className="ten wide column" id="questionContainer">
+            <div className="ten wide column" id="questionContainer">
               <QuestionContainer/>
-          </div>
+            </div>
           </div>
         </div>
-        
       </Fragment>
     );
   }
 }
 
-function mapStateToProps({ auth }) {
-  return { auth };
+function mapStateToProps( state ) {
+  return { 
+    auth: state.auth,
+    category: state.category
+  };
 }
 
 export default connect(mapStateToProps)(QuestionsPage);
