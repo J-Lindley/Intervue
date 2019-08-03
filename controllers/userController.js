@@ -36,6 +36,12 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  submitQuestion: function(req, res) {
+    db.User
+      .findOneAndUpdate({googleId: req.body.uid}, {$push: {submitted: req.body.qid}})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   deleteQuestion: function(req, res) {
     db.User 
       .findById({saved: req.body.qid})
