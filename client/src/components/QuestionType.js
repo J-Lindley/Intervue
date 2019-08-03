@@ -36,9 +36,9 @@ class QuestionType extends Component {
           {this.state.questions.length ? this.state.questions.map(question => (
               <div>
                 <h2 className="questionLabel"> {question.questionType} Questions </h2>
-                <h1>{question.question}</h1>
+                <h3>{question.question}</h3>
                 <h2 className="questionLabel"> Answer </h2>
-                <h1>{question.answer}</h1>
+                <h3>{question.answer}</h3>
                 <SaveBtn />
                 <div className="extra content">
                   <span className="left floated" id="thumbsUp">
