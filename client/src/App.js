@@ -13,9 +13,12 @@ import CategoryPage from './pages/CategoryPage';
 // import NoMatch from './pages/404Page';
 
 class App extends Component {
+
   componentDidMount() {
     this.props.fetchUser();
   }
+
+
   render() {
     return (
       <div className="App">

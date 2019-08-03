@@ -8,11 +8,11 @@ import "../App.css";
 class Header extends Component {
 
   state = {
-    users:[]
+    user:[]
   }
 
   componentDidMount() {
-    axios.get("api/user/findUser")
+    axios.get("/api/current_user")
     .then(res => {
       this.setState({users: res.data})}).catch(err => console.log(err));  
   }
@@ -29,7 +29,7 @@ class Header extends Component {
             <div className="header item">
               <a href="/questionsPage">Home</a>
             </div>
-            {this.state.users
+            {this.state.user
             .map(user => (
             <div className="header item">
               <img src={user.userPhoto} alt="userPhoto" id="userPhoto" />
