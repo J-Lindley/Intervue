@@ -14,7 +14,12 @@ class Header extends Component {
   componentDidMount() {
     axios.get("/api/current_user")
     .then(res => {
-      this.setState({users: res.data})}).catch(err => console.log(err));  
+      console.log(res.data);
+      
+      this.setState({user: res.data})}).then(console.log(this.state)
+      ).catch(err => console.log(err));  
+      console.log(this.state);
+      
   }
 
   renderContent() {
@@ -29,12 +34,10 @@ class Header extends Component {
             <div className="header item">
               <a href="/questionsPage">Home</a>
             </div>
-            {this.state.users.length ? this.state.users.map(user => (
             <div className="header item">
-              <img src={user.userPhoto} alt="userPhoto" id="userPhoto" />
+              <img src={this.state.user.userPhoto} alt="userPhoto" id="userPhoto" />
               <a href="/profile">Profile</a>
             </div>
-            ))}
             <div className="header item">
               <a href="/newQuestion">Add Interview Question</a>
             </div>
