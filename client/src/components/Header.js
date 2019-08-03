@@ -8,7 +8,7 @@ import "../App.css";
 class Header extends Component {
 
   state = {
-    user:[]
+    users:{}
   }
 
   componentDidMount() {
@@ -29,8 +29,7 @@ class Header extends Component {
             <div className="header item">
               <a href="/questionsPage">Home</a>
             </div>
-            {this.state.user
-            .map(user => (
+            {this.state.users.length ? this.state.users.map(user => (
             <div className="header item">
               <img src={user.userPhoto} alt="userPhoto" id="userPhoto" />
               <a href="/profile">Profile</a>
