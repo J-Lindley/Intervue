@@ -27,6 +27,9 @@ class QuestionForm extends Component {
       }
       
       axios.post("api/questions/newQuestion", newQuestion)
+      .then(function(response) {
+        console.log(response);
+      })
     }
     
   }
