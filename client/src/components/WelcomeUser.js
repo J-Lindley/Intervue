@@ -4,26 +4,23 @@ import axios from 'axios';
 
 class WelcomeUser extends Component {
   state = {
-    users:[]
+    user:[]
   }
 
   componentDidMount() {
-    axios.get("api/user/findUser")
+    axios.get("api/current_user")
     .then(res => {
-      this.setState({users: res.data})}).catch(err => console.log(err));  
+      this.setState({user: res.data})}).catch(err => console.log(err));  
   }
 
   render() {
     return(
       <Fragment>
-      {this.state.users
-      .map(user => (
       <div id="userWelcome">
         <div>
-          <h1>Hello, {user.userName}! </h1>
+          <h1>Hello, {this.state.user.userName}! </h1>
         </div>
       </div>
-      ))}
       </Fragment>
     )
   }
