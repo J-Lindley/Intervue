@@ -4,28 +4,26 @@ import axios from 'axios';
 
 class NewQuestionWelcome extends Component {
   state = {
-    users:[]
+    user:[]
   }
 
   componentDidMount() {
-    axios.get("api/user/findUser")
+    axios.get("api/current_user")
     .then(res => {
       console.log(res.data) 
-      this.setState({users: res.data})}).catch(err => console.log(err));  
+      this.setState({user: res.data})}).catch(err => console.log(err));  
   }
 
   render() {
     return(
       <Fragment>
-      {this.state.users
-      .map(user => (
+  
         <div id="userWelcome">
           <div>
-            <h1>{user.userName} please add your question using the form below! </h1>
+            <h1>{this.state.user.userName} please add your question using the form below! </h1>
           </div>
         </div>
         
-      ))}
       </Fragment>
     )
   }
