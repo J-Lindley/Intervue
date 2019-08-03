@@ -50,8 +50,20 @@ module.exports = {
       .distinct('questionType')
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-  }
+  },
+  thumbsUpGet: function(req, res) {
+    db.Question
+      .findOneAndUpdate({ _id: req.params.id }, req.body)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  thumbsUpSet: function(req, res) {
+    db.Question
+      .find({ _id: req.params.id }, "yesScore")
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+
 
 }
 
-//figure out how to have user questions save to account
