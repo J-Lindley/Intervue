@@ -20,7 +20,7 @@ class NewQuestionWelcome extends Component {
   
         <div id="userWelcome">
           <div>
-            <h1>{this.state.user.userName} please add your question using the form below! </h1>
+            <h1>{this.state.user.userName} - please add your question using the form below! </h1>
           </div>
         </div>
         

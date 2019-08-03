@@ -1,6 +1,7 @@
 import React, { Component, Fragment }from 'react';
 import '../App.css';
 import axios from 'axios';
+import DeleteBtn from './DeleteBtn';
 
 class SubmittedQuestions extends Component {
 
@@ -41,6 +42,7 @@ class SubmittedQuestions extends Component {
               <h3>Answer: </h3> 
               <strong>{submittedQuestion.answer}</strong>
             </div>
+            <DeleteBtn />
           </div>
         )) : ""}
       </Fragment>
