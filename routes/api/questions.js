@@ -23,6 +23,6 @@ router.route("/newQuestion")
 
 //Thumbs up/down
 router.route("/thumbsUp/:id")
-  .get(questionsController.thumbsUp)
+  .get(questionsController.thumbsUpGet)
 
 module.exports = router;
