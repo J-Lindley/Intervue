@@ -6,11 +6,19 @@ const userController = require("../../controllers/userController");
 router.route("/")
 .get(userController.findAll)
 
-router.route("/user/savedQuestions")
+router.route("/savedQuestions/:user")
 .get(userController.findSaved)
 
-router.route("user/submittedQuestions")
+router.route("/findUser")
+.get(userController.findUser);
+
+router.route("/submittedQuestions")
 .get(userController.findSubmitted)
 
+router.route("/saveQuestion")
+.put(userController.saveQuestion)
+
+router.route("/deleteQuestion")
+.delete(userController.deleteQuestion)
 
 module.exports = router;

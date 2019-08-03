@@ -5,7 +5,7 @@ import QuestionForm from '../components/QuestionForm';
 class NewQuestion extends Component {
   render() {
     return (
-      <QuestionForm />
+        <QuestionForm />
     )
   }
 }

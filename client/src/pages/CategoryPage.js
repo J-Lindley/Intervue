@@ -5,15 +5,20 @@ import QuestionType from '../components/QuestionType';
 import CategoryContainer from '../components/CategoryContainer';
 
 class CategoryPage extends Component {
+
+
+
   render() {
     return (
       <Fragment>
-        <div className="ui grid">
-          <div className="four wide column" id="categoryColumn">
+        <div className="ui container">
+          <div className="ui grid">
+            <div className="five wide column" id="categoryColumn">
               <CategoryContainer/>
-          </div>
-          <div className="ten wide column" id="questionContainer">
+            </div>
+            <div className="ten wide column" id="questionContainer">
               <QuestionType />
+            </div>
           </div>
         </div>
       </Fragment>
@@ -21,8 +26,8 @@ class CategoryPage extends Component {
   }
 }
 
-function mapStateToProps({ auth }) {
-  return { auth };
+function mapStateToProps({ category }) {
+  return { category };
 }
 
 export default connect(mapStateToProps)(CategoryPage);

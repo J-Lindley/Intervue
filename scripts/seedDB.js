@@ -31,6 +31,7 @@ const questionSeed = [
   {
     question: "Explain how to detect the operating system on the client machine?",
     answer: "In order to detect the operating system on the client machine, the navigator.platform string (property) should be used.",
+    questionType: "General Programming",
     date: new Date(Date.now())
   },
   {
@@ -129,15 +130,9 @@ const questionSeed = [
   },
   {
     question: "Describe and code an algorithm that returns the first duplicate character in a string?",
-    answer: 'public class FirstDupCharacter { public static void main(String[] args) { System.out.println(findDupCharacter("abcdefghiaklmno")); } private static Character findDupCharacter(final String input) { final Set set = new HashSet(); Character dup = null; for (int i = 0; i &lt; input.length(); i++) { if (set.contains(input.charAt(i))) { dup = input.charAt(i); break; } else { set.add(input.charAt(i)); } } return dup; } }',
+    answer: 'Public class FirstDupCharacter { public static void main(String[] args) { System.out.println(findDupCharacter("abcdefghiaklmno")); } private static Character findDupCharacter(final String input) { final Set set = new HashSet(); Character dup = null; for (int i = 0; i &lt; input.length(); i++) { if (set.contains(input.charAt(i))) { dup = input.charAt(i); break; } else { set.add(input.charAt(i)); } } return dup; } }',
     company: "Expedia",
     jobType: ["Software Developer"],
-    questionType: "General Programming"
-  },
-  {
-    question: "Write a method to decide if the given binary tree is a binary search tree or not.",
-    answer: '',
-    company: "Amazon",
     questionType: "General Programming"
   },
   {
@@ -160,126 +155,126 @@ const questionSeed = [
     question: "What is the significance of, and reason for, wrapping the entire content of a JavaScript source file in a function block?",
     answer: "This is an increasingly common practice, employed by many popular JavaScript libraries (jQuery, Node.js, etc.). This technique creates a closure around the entire contents of the file which, perhaps most importantly, creates a private namespace and thereby helps avoid potential name clashes between different JavaScript modules and libraries.",
     date: new Date(Date.now()),
-    questionType: "javascript"
+    questionType: "Javascript"
     },
     {
     company: "Artemis",
     question: "What is AngularJS?",
     answer: "AngularJS is a javascript framework used for creating single web page applications.  It allows you to use HTML as your template language and enables you to extend HTML’s syntax to express your application’s components clearly",
     date: new Date(Date.now()),
-    questionType: "angularJS"
+    questionType: "AngularJS"
     },
     {
     company:"Wild Earth",
     question: "Explain what is scope in AngularJS?",
     answer: "Scope refers to the application model, it acts like glue between application controller and the view.  Scopes are arranged in hierarchical structure and impersonate the DOM ( Document Object Model) structure of the application.  It can watch expressions and propagate events.",
     date: new Date(Date.now()),
-    questionType: "angularJS"
+    questionType: "AngularJS"
     },
     {
     company: "ClickSWITCH",
     question: "Explain what is services in AngularJS?",
     answer: "In AngularJS services are the singleton objects or functions that are used for carrying out specific tasks.  It holds some business logic and these function can be called as controllers, directive, filters and so on.",
     date: new Date(Date.now()),
-    questionType: "angularJS"
+    questionType: "AngularJS"
     },
     {
     company: "Credly",
     question: "Explain what are directives ? Mention some of the most commonly used directives in AngularJS application ? ",
     answer: "A directive is something that introduces new syntax, they are like markers on DOM element which attaches a special behavior to it. In any AngularJS application, directives are the most important components. Some of the commonly used directives are ng-model, ng-App, ng-bind, ng-repeat , ng-show etc.",
     date: new Date(Date.now()),
-    questionType: "angularJS"
+    questionType: "AngularJS"
     },
     {
     company: "ManyChat",
     question: "Explain what is data binding in AngularJS ?",
     answer: "Automatic synchronization of data between the model and view components is referred as data binding in AngularJS.",    
     date: new Date(Date.now()),
-    questionType: "angularJS"
+    questionType: "AngularJS"
     },
     {
     company: "Ultimate Software",
     question: "Explain what is string interpolation in Angular.js ?",
     answer: "In Angular.js the compiler during the compilation process matches text and attributes using interpolate service to see if they contains embedded expressions.  As part of normal digest cycle these expressions are updated and registered as watches.",
     date: new Date(Date.now()),
-    questionType: "angularJS"
+    questionType: "AngularJS"
     },
     {
     company: "Workday",
     question: "What are Promises",
     answer: "Promises are a concurrency primitive, first described in the 80s. Now they are part of most modern programming languages to make your life easier. Promises can help you better handle async operations.",
     date: new Date(Date.now()),
-    questionType: "node.js"
+    questionType: "Node.js"
     },
     {
     company: "Salesforce",
     question: "What's a stub?",
     answer: "Stubs are functions/programs that simulate the behaviors of components/modules. Stubs provide canned answers to function calls made during test cases.",
     date: new Date(Date.now()),
-    questionType: "node.js"
+    questionType: "Node.js"
     },
     {
     company: "Cisco",
     question: "When are background/worker processes useful? How can you handle worker tasks?",
     answer: "Worker processes are extremely useful if you'd like to do data processing in the background, like sending out emails or processing images.",
     date: new Date(Date.now()),
-    questionType: "node.js"
+    questionType: "Node.js"
     },
     {
     company: "Red Hat",
     question: "Why Java is platform independent?",
     answer: "Java is called platform independent because of its byte codes which can run on any system irrespective of its underlying operating system.",
     date: new Date(Date.now()),
-    questionType: "java"
+    questionType: "Java"
     },
     {
     company: "Hub Spot",
     question: "Why Java is not 100% Object-oriented?",
     answer: "Java is not 100% Object-oriented because it makes use of eight primitive data types such as boolean, byte, char, int, float, double, long, short which are not objects.",
     date: new Date(Date.now()),
-    questionType: "java"
+    questionType: "Java"
     },
     {
     company: "Zillow Group",
     question: "What is HTML?",
     answer: "HTML is short for HyperText Markup Language and is the language of the World Wide Web. It is the standard text formatting language used for creating and displaying pages on the Web. HTML documents are made up of two things: the content and the tags that format it for proper display on pages.",
     date: new Date(Date.now()),
-    questionType: "html"
+    questionType: "HTML"
     },
     {
     company: "SAP America Inc.",
     question: "Do all HTML tags come in a pair?",
     answer: "No, there are single HTML tags that do not need a closing tag. Examples are the <img> tag and <br> tags.",
     date: new Date(Date.now()),
-    questionType: "html"
+    questionType: "HTML"
     },
     {
     company: "Adobe",
     question: "What is an image map?",
     answer: "Image map lets you link to many different web pages using a single image. You can define shapes in images that you want to make part of an image mapping.",
     date: new Date(Date.now()),
-    questionType: "html"
+    questionType: "HTML"
     },
     {
     company: "Intuit Inc.",
     question: "Is there any way to keep list elements straight in an HTML file?",
     answer: "By using indents, you can keep the list elements straight. If you indent each subnested list in further than the parent list that contains it, you can at a glance determine the various lists and the elements that it contains.",
     date: new Date(Date.now()),
-    questionType: "html"
+    questionType: "HTML"
     },
     {
     company: "New Relic",
     question: "What is CSS",
     answer: "CSS stands for Cascading Style Sheet. It is a popular styling language which is used with HTML to design websites.",
     date: new Date(Date.now()),
-    questionType: "css"
+    questionType: "CSS"
     },
     {
     company: "Dropbox",
     question: "What are CSS frameworks?",
     answer: "CSS frameworks are the preplanned libraries which make easy and more standard compliant web page styling. The frequently used CSS frameworks are: Bootstrap, Foundation, Semantic UI, Gumby, Ulkit.",
     date: new Date(Date.now()),
-    questionType: "css"
+    questionType: "CSS"
     },
     {
     company: "Microsoft",

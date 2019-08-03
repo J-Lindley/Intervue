@@ -1,32 +1,42 @@
 import React , {Component, Fragment} from "react";
 import "../App.css";
 import axios from 'axios';
+import * as actions from '../actions';
+import {connect} from 'react-redux';
+import {withRouter} from 'react-router';
 
 class Categories extends Component {
   
   state = {
-    questionType: []
+    questionType: [],
   }
 
   componentDidMount() {
     axios.get("api/questions/categories")
     .then(res => {
       console.log(res.data) 
-      this.setState({questionType: res.data})}).catch(err => console.log(err))
-      
+      this.setState({questionType: res.data})}).catch(err => console.log(err))  
   }
+
+  handleCategoryClick(category){
+    this.props.setCategory(category);
+    this.props.history.push('/categorypage');
+  }
+
   render() {
     return ( 
       <Fragment>
-        <button className="ui primary button">
           <h4>{this.state.questionType
             .map(questionType => (
-              <div>{questionType}</div>
+              <button className="ui primary button" id="categoryBtn" 
+              onClick={() => this.handleCategoryClick(questionType)}>
+              {questionType}
+              </button>
             ))}</h4>
-        </button>
       </Fragment>
     );
   }
 }
+ 
 
-export default Categories;
+export default connect(null, actions)(withRouter(Categories));
