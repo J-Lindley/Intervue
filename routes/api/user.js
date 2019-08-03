@@ -18,6 +18,9 @@ router.route("/submittedQuestions")
 router.route("/saveQuestion")
 .put(userController.saveQuestion)
 
+router.route("/submitQuestion")
+.put(userController.submitQuestion)
+
 router.route("/deleteQuestion")
 .delete(userController.deleteQuestion)
 
