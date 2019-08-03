@@ -10,28 +10,38 @@ class QuestionForm extends Component {
 
   componentDidMount() {
     axios.get("api/questions/categories")
-    .then(res => {
-      console.log(res.data) 
-      this.setState({questionType: res.data})}).catch(err => console.log(err))
-      
+      .then(res => {
+        console.log(res.data)
+        this.setState({ questionType: res.data })
+      }).catch(err => console.log(err))
+
   }
 
   submitQuestion = event => {
     event.preventDefault();
-    if(this.refs.question.value !== "" && this.refs.answer.value !== "" && this.refs.category.value !== "Select Category (Required)") {
+    if (this.refs.question.value !== "" && this.refs.answer.value !== "" && this.refs.category.value !== "Select Category (Required)") {
       const newQuestion = {
         question: this.refs.question.value,
         answer: this.refs.answer.value,
         company: this.refs.company.value,
         questionType: this.refs.category.value
       }
-      
+
       axios.post("api/questions/newQuestion", newQuestion)
-      .then(function(response) {
-        console.log(response);
-      })
+        .then(function (res) {
+          console.log(res.data._id);
+          let submitted = res.data._id;
+          axios.get("api/current_user")
+            .then(res => {
+              let user = res.data.googleId;
+              axios.put("api/user/submitQuestion", { qid: submitted, uid: user })
+                .then(res => {
+                  console.log(res);
+                })
+            })
+        })
     }
-    
+
   }
 
   render() {
@@ -42,7 +52,7 @@ class QuestionForm extends Component {
             <NewQuestionWelcome />
           </div>
           <div class="ui bottom attached segment">
-              <form className="ui form" id="newQuestionContainer">
+            <form className="ui form" id="newQuestionContainer">
               <div className="field">
                 <label className="formLabel"><h3>Question: </h3></label>
                 <textarea
@@ -63,16 +73,16 @@ class QuestionForm extends Component {
               </div>
               <div className="field">
                 <label className="formLabel"><h3>Company: </h3></label>
-                <input placeholder="Company (if applicable)" type="text" name="company" ref="company"/>
+                <input placeholder="Company (if applicable)" type="text" name="company" ref="company" />
               </div>
               <div className="field">
                 <label className="formLabel"><h3>Question Category: </h3></label>
                 <select className="ui search dropdown" ref="category" name="category">
                   <option value="">Select Category (Required)</option>
                   {this.state.questionType
-                  .map(questionType => (
-                    <option value={questionType}>{questionType}</option>
-                  ))}
+                    .map(questionType => (
+                      <option value={questionType}>{questionType}</option>
+                    ))}
                 </select>
               </div>
               <div className="ui primary button" onClick={this.submitQuestion}>Submit Question</div>
@@ -80,7 +90,7 @@ class QuestionForm extends Component {
           </div>
         </div>
 
-        
+
       </Fragment>
     );
   }
