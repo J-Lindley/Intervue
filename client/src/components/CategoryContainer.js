@@ -8,13 +8,8 @@ class CategoryContainer extends Component {
   render() {
     return ( 
       <Fragment>
-<<<<<<< HEAD
-        <h3 className="questionLabel">Question Types</h3>
-        <Categories />
-=======
         <h3 className="questionLabel">Question Categories</h3>
         <Categories/>
->>>>>>> master
       </Fragment>
     );
   }
