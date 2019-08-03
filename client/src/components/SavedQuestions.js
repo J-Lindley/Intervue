@@ -43,7 +43,7 @@ class SavedQuestions extends Component {
               <h3>Answer: </h3> 
               <strong>{savedQuestion.answer}</strong>
             </div>
-            <DeleteBtn />
+          <DeleteBtn/>
           </div>
         )) : ""}
       </Fragment>
