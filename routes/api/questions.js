@@ -21,4 +21,8 @@ router.route("/category/:category")
 router.route("/newQuestion")
   .post(questionsController.create)
 
+//Thumbs up/down
+router.route("/thumbsUp/:id")
+  .get(questionsController.thumbsUpGet)
+
 module.exports = router;

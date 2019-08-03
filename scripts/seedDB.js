@@ -129,13 +129,6 @@ const questionSeed = [
     date: new Date(Date.now())
   },
   {
-    question: "Describe and code an algorithm that returns the first duplicate character in a string?",
-    answer: 'Public class FirstDupCharacter { public static void main(String[] args) { System.out.println(findDupCharacter("abcdefghiaklmno")); } private static Character findDupCharacter(final String input) { final Set set = new HashSet(); Character dup = null; for (int i = 0; i &lt; input.length(); i++) { if (set.contains(input.charAt(i))) { dup = input.charAt(i); break; } else { set.add(input.charAt(i)); } } return dup; } }',
-    company: "Expedia",
-    jobType: ["Software Developer"],
-    questionType: "General Programming"
-  },
-  {
     company: "Amazon",
     question: "What is the drawback of creating true private methods in JavaScript?",
     answer: "One of the drawbacks of creating true private methods in JavaScript is that they are very memory-inefficient, as a new copy of the method would be created for each instance.",
