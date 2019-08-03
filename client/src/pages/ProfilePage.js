@@ -1,60 +1,31 @@
-import React, {Component, Fragment}from 'react';
+import React, { Component, Fragment } from 'react';
 import '../App.css';
-import DeleteBtn from '../components/DeleteBtn';
+import SavedQuestions from '../components/SavedQuestions';
+import SubmittedQuestions from '../components/SubmittedQuestions';
+import WelcomeUser from '../components/WelcomeUser';
+
 
 class Profile extends Component {
   render() {
     return (
       <Fragment>
-      <div class="ui raised segments">
-        <h3 class="ui header">Saved Questions</h3>
-        <div class="ui segment">
-          <p>Question 1</p>
-          <DeleteBtn />
+        <div className="ui container">
+            <div className="ui tabular menu">
+            <WelcomeUser />
+            </div>
+            <div className="ui bottom attached segment">
+              <div className="ui grid">
+                <div className="eight wide column" id="categoryColumn">
+                  <SavedQuestions /> 
+                </div>
+                <div className="eight wide column" id="categoryColumn">
+                  <SubmittedQuestions />
+                </div>
+              </div>
+            </div>
         </div>
-        <div class="ui segment">
-          <p>Question 2</p>
-          <DeleteBtn />
-        </div>
-        <div class="ui segment">
-          <p>Question 3</p>
-          <DeleteBtn />
-        </div>
-        <div class="ui segment">
-          <p>Question 4</p>
-          <DeleteBtn />
-        </div>
-        <div class="ui segment">
-          <p>Question 5</p>
-          <DeleteBtn />
-        </div>
-      </div>
-
-      <div class="ui raised segments">
-        <h3 class="ui header">Submitted Questions</h3>
-        <div class="ui segment">
-          <p>Question 1</p>
-          <DeleteBtn />
-        </div>
-        <div class="ui segment">
-          <p>Question 2</p>
-          <DeleteBtn />
-        </div>
-        <div class="ui segment">
-          <p>Question 3</p>
-          <DeleteBtn />
-        </div>
-        <div class="ui segment">
-          <p>Question 4</p>
-          <DeleteBtn />
-        </div>
-        <div class="ui segment">
-          <p>Question 5</p>
-          <DeleteBtn />
-        </div>
-      </div>
       </Fragment>
-    )
+    );
   }
 }
 

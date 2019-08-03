@@ -6,24 +6,19 @@ const userController = require("../../controllers/userController");
 router.route("/")
 .get(userController.findAll)
 
+router.route("/savedQuestions/:user")
+.get(userController.findSaved)
 
+router.route("/findUser")
+.get(userController.findUser);
 
+router.route("/submittedQuestions")
+.get(userController.findSubmitted)
 
+router.route("/saveQuestion")
+.put(userController.saveQuestion)
 
-
-
-
-
-  // .delete(userController.__id);
-
-
-
-//finish setting these up
-
-// router.route("/myQuestions/:myQuestions")
-//   .put(userController.myQuestions);
-
-// router.route("/jobType/:jobType")
-//   .get(userController.myQuestions);
+router.route("/deleteQuestion")
+.delete(userController.deleteQuestion)
 
 module.exports = router;

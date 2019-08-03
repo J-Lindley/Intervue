@@ -1,36 +1,65 @@
-import React , {Component} from "react";
+import React, { Component, Fragment } from "react";
 import "../App.css";
+import axios from "axios";
+import NewQuestionWelcome from "./NewQuestionWelcome";
 
 class QuestionForm extends Component {
+  state = {
+    questionType: []
+  }
+
+  componentDidMount() {
+    axios.get("api/questions/categories")
+    .then(res => {
+      console.log(res.data) 
+      this.setState({questionType: res.data})}).catch(err => console.log(err))
+      
+  }
+
   render() {
-    return ( 
-          <div class="ui form">
-            <div class="field">
-
-              <div class="field">
-              <label><h3>Question</h3></label>
-              <textarea rows="2" name="question"></textarea>
+    return (
+      <Fragment>
+        <div className="ui container">
+          <div className="ui tabular menu">
+            <NewQuestionWelcome />
+          </div>
+          <div class="ui bottom attached segment">
+              <form className="ui form" id="newQuestionContainer">
+              <div className="field">
+                <label className="formLabel"><h3>Question: </h3></label>
+                <textarea
+                  placeholder="Please submit the question here. (Required) "
+                  type="text"
+                />
               </div>
-
-              <div class="field">
-                <label><h3>Question Type</h3></label>
-                <div class="ui selection dropdown">
-                <input type="hidden" name="questionType"></input>
-                <i class="dropdown icon"></i>
-                <div class="default text">Select One</div>
-                <div class="menu">
-                {/* <div class="item" data-value="1">Behavioral</div>
-                <div class="item" data-value="0">JavaScript</div> */}
-                </div>
+              <div className="field">
+                <label className="formLabel"><h3>Answer: </h3></label>
+                <textarea
+                  placeholder="Please submit the question answer here. (Required) "
+                  type="text"
+                />
               </div>
-
-              <div class="field">
-              <label><h3>Company</h3></label>
-              <input type="text" name="company"></input>
+              <div className="field">
+                <label className="formLabel"><h3>Company: </h3></label>
+                <input placeholder="Company (if applicable)" type="text" />
               </div>
+              <div className="field">
+                <label className="formLabel"><h3>Question Category: </h3></label>
+                <select className="ui search dropdown">
+                  <option value="">Select Category (Required)</option>
+                  {this.state.questionType
+                  .map(questionType => (
+                    <option value={questionType}>{questionType}</option>
+                  ))}
+                </select>
+              </div>
+              <div className="ui primary button">Submit Question</div>
+            </form>
           </div>
         </div>
-      </div>
+
+        
+      </Fragment>
     );
   }
 }
