@@ -6,7 +6,6 @@ import CategoryContainer from '../components/CategoryContainer';
 
 class CategoryPage extends Component {
 
-
   render() {
     return (
       <Fragment>
