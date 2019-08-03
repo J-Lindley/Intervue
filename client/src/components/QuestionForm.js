@@ -16,6 +16,21 @@ class QuestionForm extends Component {
       
   }
 
+  submitQuestion = event => {
+    event.preventDefault();
+    if(this.refs.question.value !== "" && this.refs.answer.value !== "" && this.refs.category.value !== "Select Category (Required)") {
+      const newQuestion = {
+        question: this.refs.question.value,
+        answer: this.refs.answer.value,
+        company: this.refs.company.value,
+        questionType: this.refs.category.value
+      }
+      
+      axios.post("api/questions/newQuestion", newQuestion)
+    }
+    
+  }
+
   render() {
     return (
       <Fragment>
@@ -30,6 +45,8 @@ class QuestionForm extends Component {
                 <textarea
                   placeholder="Please submit the question here. (Required) "
                   type="text"
+                  ref="question"
+                  name="question"
                 />
               </div>
               <div className="field">
@@ -37,15 +54,17 @@ class QuestionForm extends Component {
                 <textarea
                   placeholder="Please submit the question answer here. (Required) "
                   type="text"
+                  ref="answer"
+                  name="answer"
                 />
               </div>
               <div className="field">
                 <label className="formLabel"><h3>Company: </h3></label>
-                <input placeholder="Company (if applicable)" type="text" />
+                <input placeholder="Company (if applicable)" type="text" name="company" ref="company"/>
               </div>
               <div className="field">
                 <label className="formLabel"><h3>Question Category: </h3></label>
-                <select className="ui search dropdown">
+                <select className="ui search dropdown" ref="category" name="category">
                   <option value="">Select Category (Required)</option>
                   {this.state.questionType
                   .map(questionType => (
@@ -53,7 +72,7 @@ class QuestionForm extends Component {
                   ))}
                 </select>
               </div>
-              <div className="ui primary button">Submit Question</div>
+              <div className="ui primary button" onClick={this.submitQuestion}>Submit Question</div>
             </form>
           </div>
         </div>
