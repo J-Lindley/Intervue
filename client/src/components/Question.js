@@ -30,7 +30,7 @@ class Question extends Component {
         .then(res => {
           console.log(res);
         })
-    })
+    });
   }
   
   render() {
