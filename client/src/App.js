@@ -1,29 +1,46 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Header from './components/Header';
-import GoogleAuth from './components/GoogleAuth';
+import { connect } from 'react-redux';
+import * as actions from './actions';
+
+import Header from "./components/Header";
+import QuestionsPage from './pages/QuestionsPage';
+import NewQuestion from './pages/NewQuestion';
+import InfoPage from './pages/InfoPage';
+import ProfilePage from './pages/ProfilePage';
+import CategoryPage from './pages/CategoryPage';
+// import NoMatch from './pages/404Page';
+
+class App extends Component {
+
+  componentDidMount() {
+    this.props.fetchUser();
+  }
 
 
-function App() {
-  return (
-    <div className="App">
-      <Header>
-        <GoogleAuth />
-      </Header>
-      {/* <Router>
-      <div>
-        <Nav />
-        <Switch>
-          <Route exact path="/"/>
-          <Route exact path="/books"/>
-          <Route exact path="/books/:id" />
-          <Route component={NoMatch} />
-        </Switch>
+  render() {
+    return (
+      <div className="App">
+        {
+          <div>
+              <Router>
+                <Header />
+                  <Switch>
+                  <Route exact path="/" component={InfoPage}/>
+                  <Route exact path="/InfoPage" component={InfoPage}/>
+                  <Route exact path="/questionsPage" component={QuestionsPage} />
+                  <Route exact path="/categoryPage" component={CategoryPage} />
+                  <Route exact path="/newQuestion" component={NewQuestion} />
+                  <Route exact path="/profile" component={ProfilePage}/>
+                  {/* <Route component={NoMatch}/> */}
+                  </Switch>
+              </Router>
+            </div>
+        }
       </div>
-    </Router> */}
-    </div>
-  );
+    );
+  }
 }
 
-export default App;
+export default connect(null, actions)(App);
