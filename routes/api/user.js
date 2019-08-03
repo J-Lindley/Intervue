@@ -12,7 +12,7 @@ router.route("/savedQuestions/:user")
 router.route("/findUser")
 .get(userController.findUser);
 
-router.route("/submittedQuestions")
+router.route("/submittedQuestions/:user")
 .get(userController.findSubmitted)
 
 router.route("/saveQuestion")

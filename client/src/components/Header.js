@@ -14,12 +14,8 @@ class Header extends Component {
   componentDidMount() {
     axios.get("/api/current_user")
     .then(res => {
-      console.log(res.data);
-      
       this.setState({user: res.data})}).then(console.log(this.state)
       ).catch(err => console.log(err));  
-      console.log(this.state);
-      
   }
 
   renderContent() {
