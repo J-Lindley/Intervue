@@ -19,7 +19,6 @@ class QuestionType extends Component {
       this.setState({questions:res.data})}).catch(err => console.log(err))
   }
 
-
   render() {
     const settings = {
       dots: true,
