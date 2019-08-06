@@ -29,7 +29,6 @@ class QuestionForm extends Component {
 
       axios.post("api/questions/newQuestion", newQuestion)
         .then(function (res) {
-          console.log(res.data._id);
           let submitted = res.data._id;
           axios.get("api/current_user")
             .then(res => {
@@ -89,8 +88,6 @@ class QuestionForm extends Component {
             </form>
           </div>
         </div>
-
-
       </Fragment>
     );
   }

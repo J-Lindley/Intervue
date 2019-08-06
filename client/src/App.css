@@ -101,7 +101,7 @@ body {
   text-decoration: underline;
 }
 
-#questionContainer, #savedQuestionContainer, #newQuestionContainer
+#questionContainer, #savedQuestionContainer, #newQuestionContainer, #submittedQuestionContainer
 {
   background-color: #CFCCC9;
   padding: 40px;
@@ -114,7 +114,7 @@ body {
        -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
             box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
-#questionContainer:before, .questionContainer:after, #savedQuestionContainer:before, #savedQuestionContainer:after, #newQuestionContainer:before, #newQuestionContainer::after
+#questionContainer:before, .questionContainer:after, #savedQuestionContainer:before, #savedQuestionContainer:after, #newQuestionContainer:before, #newQuestionContainer::after, #submittedQuestionContainer:before, #submittedQuestionContainer:after
 {
     content:"";
     position:absolute;
@@ -129,7 +129,7 @@ body {
     -moz-border-radius:100px / 10px;
     border-radius:100px / 10px;
 }
-#questionContainer:after, #savedQuestionContainer:after, #newQuestionContainer:after
+#questionContainer:after, #savedQuestionContainer:after, #newQuestionContainer:after, #submittedQuestionContainer:after
 {
     right:10px;
     left:auto;
@@ -165,7 +165,7 @@ body {
   margin-right: 10px;
 }
 
-#savedQuestionContainer {
+#savedQuestionContainer, #submittedQuestionContainer {
   text-align: left;
   margin: 0px 0px 10px 0px;
 }
@@ -179,7 +179,7 @@ body {
   border-color: transparent;
 }
 
-.savedQuestionDetails {
+.savedQuestionDetails, .submittedQuestionDetails {
   margin-bottom: 10px;
 }
 

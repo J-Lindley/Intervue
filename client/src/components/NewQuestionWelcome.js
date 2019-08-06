@@ -10,7 +10,6 @@ class NewQuestionWelcome extends Component {
   componentDidMount() {
     axios.get("api/current_user")
     .then(res => {
-      console.log(res.data) 
       this.setState({user: res.data})}).catch(err => console.log(err));  
   }
 
@@ -20,7 +19,7 @@ class NewQuestionWelcome extends Component {
   
         <div id="userWelcome">
           <div>
-            <h1>{this.state.user.userName} please add your question using the form below! </h1>
+            <h1>{this.state.user.userName} - please add your question using the form below! </h1>
           </div>
         </div>
         
