@@ -28,7 +28,7 @@ class QuestionType extends PureComponent {
       let user = res.data.googleId;
       axios.put("api/user/saveQuestion", {qid: id, uid: user})
         .then(res => {
-          console.log(res);
+          alert("This question has been saved to your profile.");
         })
     });
   }
@@ -64,7 +64,9 @@ class QuestionType extends PureComponent {
                   </span>
                 </div>
               </div>
-            )): ""}
+            )): <div>
+                <h1>Please click on a category!</h1>
+                </div>}
         </Slider>
       </Fragment>
     )

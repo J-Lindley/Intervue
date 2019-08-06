@@ -15,7 +15,7 @@ class Question extends Component {
     axios.get("/api/questions/")
     .then(res => {
       this.setState({questions: res.data})}).catch(err => console.log(err));  
-    }
+    } 
 
   saveQuestion = id => {
     //first get and store user id
@@ -26,9 +26,6 @@ class Question extends Component {
       
       let user = res.data.googleId;
       axios.put("api/user/saveQuestion", {qid: id, uid: user})
-        .then(res => {
-          console.log(res);
-        })
     });
   }
   
