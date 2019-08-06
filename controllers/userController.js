@@ -44,8 +44,7 @@ module.exports = {
   },
   deleteQuestion: function (req, res) {
     db.User
-      .findById({ saved: req.body.qid })
-      .then(dbModel => dbModel.remove())
+      .findOneAndUpdate({ googleId: req.body.uid }, { $pull: { saved: req.body.qid } })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   }

@@ -22,6 +22,6 @@ router.route("/submitQuestion")
 .put(userController.submitQuestion)
 
 router.route("/deleteQuestion")
-.delete(userController.deleteQuestion)
+.put(userController.deleteQuestion)
 
 module.exports = router;
