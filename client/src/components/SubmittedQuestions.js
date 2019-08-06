@@ -17,7 +17,6 @@ class SubmittedQuestions extends Component {
       let user = res.data.googleId;
       axios.get(`api/user/submittedQuestions/${user}`)
       .then(res => {
-      console.log(res.data) 
       this.setState({submittedQuestions: res.data})}) 
     })
   }

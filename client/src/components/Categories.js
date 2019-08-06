@@ -14,7 +14,6 @@ class Categories extends Component {
   componentDidMount() {
     axios.get("api/questions/categories")
     .then(res => {
-      console.log(res.data) 
       this.setState({questionType: res.data})}).catch(err => console.log(err))  
   }
 

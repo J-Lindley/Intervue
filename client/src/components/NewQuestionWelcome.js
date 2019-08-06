@@ -10,7 +10,6 @@ class NewQuestionWelcome extends Component {
   componentDidMount() {
     axios.get("api/current_user")
     .then(res => {
-      console.log(res.data) 
       this.setState({user: res.data})}).catch(err => console.log(err));  
   }
 

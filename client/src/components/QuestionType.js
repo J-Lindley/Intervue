@@ -6,18 +6,6 @@ import SaveBtn from './SaveBtn';
 
 class QuestionType extends PureComponent {
 
-  // state={
-  //   category: this.props.category.category,
-  //   questions:[]
-  // }
-
-  // componentDidMount() {
-  //   axios.get("/api/questions/category/" + this.state.category)
-  //   .then(res => {
-  //     console.log(res.data) 
-  //     this.setState({questions:res.data})}).catch(err => console.log(err))
-  // }
-
   render() {
     const settings = {
       dots: true,
@@ -26,8 +14,6 @@ class QuestionType extends PureComponent {
       slidesToShow: 1,
       slidesToScroll: 1
     }
-    console.log("question type props")
-    console.log(this.props)
 
     return (
       <Fragment>
