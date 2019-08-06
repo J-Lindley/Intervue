@@ -29,7 +29,9 @@ class SavedQuestions extends Component {
     axios.get("/api/current_user")
       .then(res => {
         axios.put(`api/user/deleteQuestion/`, { qid: id, uid: res.data.googleId })
-          .then(res => res.data)
+          .then(res => {
+            window.location.reload();
+          })
       })
   }
 

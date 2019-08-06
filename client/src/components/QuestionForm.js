@@ -35,6 +35,7 @@ class QuestionForm extends Component {
               let user = res.data.googleId;
               axios.put("api/user/submitQuestion", { qid: submitted, uid: user })
             }).then(res => {
+              alert("Thank you for submitting your question. It has been added to the database of interview questions.");
               window.location.reload();
             })
         })
