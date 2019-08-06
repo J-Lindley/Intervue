@@ -19,7 +19,7 @@ class Categories extends Component {
   }
 
   handleCategoryClick(category){
-    this.props.setCategory(category);
+    this.props.updateCategory(category);
     this.props.history.push('/categorypage');
   }
 

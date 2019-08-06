@@ -1,23 +1,22 @@
-import React, {Component, Fragment}from 'react';
+import React, {PureComponent, Fragment}from 'react';
 import '../App.css';
-import axios from 'axios';
 import { connect } from "react-redux";
 import Slider from 'react-slick';
 import SaveBtn from './SaveBtn';
 
-class QuestionType extends Component {
+class QuestionType extends PureComponent {
 
-  state={
-    category: this.props.category.category,
-    questions:[]
-  }
+  // state={
+  //   category: this.props.category.category,
+  //   questions:[]
+  // }
 
-  componentDidMount() {
-    axios.get("/api/questions/category/" + this.state.category)
-    .then(res => {
-      console.log(res.data) 
-      this.setState({questions:res.data})}).catch(err => console.log(err))
-  }
+  // componentDidMount() {
+  //   axios.get("/api/questions/category/" + this.state.category)
+  //   .then(res => {
+  //     console.log(res.data) 
+  //     this.setState({questions:res.data})}).catch(err => console.log(err))
+  // }
 
   render() {
     const settings = {
@@ -27,13 +26,13 @@ class QuestionType extends Component {
       slidesToShow: 1,
       slidesToScroll: 1
     }
-
-    console.log(this.state)
+    console.log("question type props")
+    console.log(this.props)
 
     return (
       <Fragment>
       <Slider {...settings} id="questionBox">
-          {this.state.questions.length ? this.state.questions.map(question => (
+          {this.props.category.questions.length ? this.props.category.questions.map(question => (
               <div>
                 <h2 className="questionLabel"> {question.questionType} Questions </h2>
                 <h3>{question.question}</h3>
@@ -54,7 +53,7 @@ class QuestionType extends Component {
               </div>
             )): ""}
         </Slider>
-        </Fragment>
+      </Fragment>
     )
   }
 
