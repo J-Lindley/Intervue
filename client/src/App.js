@@ -18,7 +18,6 @@ class App extends Component {
     this.props.fetchUser();
   }
 
-
   render() {
     return (
       <div className="App">

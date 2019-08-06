@@ -34,13 +34,9 @@ class QuestionForm extends Component {
             .then(res => {
               let user = res.data.googleId;
               axios.put("api/user/submitQuestion", { qid: submitted, uid: user })
-                .then(res => {
-                  console.log(res);
-                })
             })
         })
     }
-
   }
 
   render() {

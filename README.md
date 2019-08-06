@@ -1,27 +1,24 @@
 # Intervue
 
-Intervue is a React App for new developers. It populates interview questions and makes them serchable by language. 
+Overview: 
+1) A place where interviewees can fully prepare themselves for technical or behavioral interview. Users will be able to access questions specific to coding languages, or soft skills. They are able to save questions to their profile for later studying.
+2) Users can upload questions that they have been through to help others succeed.
+3) Users can access all saved questions via their profile page and delete questions they no longer need.
 
-https://j-lindley.github.io/Intervue/
+## Technologies Used
 
-## Installation
+- Axios
+- Passport
+- Node
+- Express
+- React
+- Mongoose
+- Google OAuth2.0
+- React Redux
+- Semantic UI
+- MongoDB
+- Heroku
 
-Install react.js
+## Link to App
+https://stark-scrubland-56124.herokuapp.com/
 
-## Usage
-
-```react.js
-import react
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
-```
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-TeamBestTeam | 2019
