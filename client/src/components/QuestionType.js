@@ -69,8 +69,8 @@ class QuestionType extends PureComponent {
                 <h3>{question.question}</h3>
                 <h2 className="questionLabel"> Answer </h2>
                 <h3>{this.state.showAnswer ? question.answer : 
-                <button className="ui primary button" onClick={this.showAnswer}>Click for answer</button>}</h3>
-                {this.props.auth ? <SaveBtn qid={question._id} onClick={ () => this.saveQuestion(question._id)} isSaved={this.checkSaved(question._id)}/> : ""}
+                <button className="ui primary button" id="showAnswerButton" onClick={this.showAnswer}>Click for answer</button>}</h3>
+                {this.props.auth ? <SaveBtn id="saveBtn" qid={question._id} onClick={ () => this.saveQuestion(question._id)} isSaved={this.checkSaved(question._id)}/> : ""}
               </div>
             )): <div>
                 <h1>Please click on a category!</h1>

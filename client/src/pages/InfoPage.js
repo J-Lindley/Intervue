@@ -11,13 +11,15 @@ class InfoPage extends Component {
         <h3>A one stop shop to help developers prepare for their for dream job interview. </h3>
         <h3>Sign up/Login with Google to create a profile which will allow you to save questions to your profile or click the "Get Started" button below to browse questions!</h3>  
         <h2>Good luck!</h2>
-      </div>
-    
-      <div>
+
+        <div>
         <button className ="ui button">
           <a href="/questionsPage">Get Started</a>
         </button>
       </div>
+      </div>
+    
+      
     </Fragment>
     );
   }
