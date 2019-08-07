@@ -1,14 +1,17 @@
-import React, { Component, Fragment }from 'react';
+import React, { PureComponent, Fragment }from 'react';
 import '../App.css';
 import axios from 'axios';
 import Slider from 'react-slick';
 import SaveBtn from './SaveBtn';
+import { connect } from "react-redux";
+import * as actions from '../actions'; 
 
-class Question extends Component {
+class Question extends PureComponent {
 
   state = {
     questions: [],
-    userId: "null"
+    userId: "null",
+    showAnswer: false
   }
 
   componentDidMount() {
@@ -26,8 +29,25 @@ class Question extends Component {
       
       let user = res.data.googleId;
       axios.put("api/user/saveQuestion", {qid: id, uid: user})
+      .then(res => {
+        this.props.fetchUser()
+      }).catch(err => console.log(err))
     });
   }
+
+  checkSaved = id => {
+    const questionSaved = this.props.auth.saved;
+    const isSaved = questionSaved.find(qid => {
+      return id === qid;
+    })
+    return isSaved;
+  }
+
+  showAnswer = () => {
+    console.log("I've been clicked")
+    this.setState({showAnswer: true});
+  }
+
   
   render() {
     const settings = {
@@ -35,12 +55,14 @@ class Question extends Component {
       infinite: true,
       speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      beforeChange: () => {
+        this.setState({showAnswer: false})
+      }
     }
 
     return (
         <Fragment>
-
         <Slider {...settings} id="questionBox">
           {this.state.questions
             .map(question => (
@@ -48,19 +70,9 @@ class Question extends Component {
                 <h2 className="questionLabel"> Question </h2>
                 <h3>{question.question}</h3>
                 <h2 className="questionLabel"> Answer </h2>
-                <h3>{question.answer}</h3>
-                <SaveBtn qid={question._id} onClick={ () => this.saveQuestion(question._id)}/>
-                <div className="extra content">
-                  <span className="left floated" id="thumbsUp">
-                  <i className="thumbs up outline icon"></i>
-                  Helpful
-                  </span>
-
-                  <span className="right floated" id="thumbsDown">
-                  <i className="thumbs down outline icon"></i>
-                  Not Helpful
-                  </span>
-                </div>
+                <h3 id="answerContainer">{this.state.showAnswer ? question.answer : 
+                <button className="ui primary button" id="showAnswerButton" onClick={this.showAnswer}>Click for answer</button>}</h3>
+                {this.props.auth ? <SaveBtn id="saveBtn" qid={question._id} onClick={ () => this.saveQuestion(question._id)} isSaved={this.checkSaved(question._id)}/> : ""}
               </div>
             ))}
         </Slider>
@@ -69,4 +81,8 @@ class Question extends Component {
   }
 }
 
-export default Question;
+function mapStateToProps({auth}) {
+  return { auth };
+}
+
+export default connect(mapStateToProps, actions) (Question);
