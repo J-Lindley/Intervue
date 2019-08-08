@@ -2,13 +2,16 @@ import React, { Component, Fragment } from 'react';
 import '../App.css';
 import axios from 'axios';
 import DeleteBtn from './DeleteBtn';
+import { connect } from "react-redux";
+import * as actions from "../actions";
 
 class SavedQuestions extends Component {
 
   state = {
     savedQuestions: {
       saved: []
-    }
+    },
+    showAnswer: false
   }
 
   componentDidMount() {
@@ -35,6 +38,11 @@ class SavedQuestions extends Component {
       })
   }
 
+  showAnswer = () => {
+    console.log("I've been clicked")
+    this.setState({showAnswer: true});
+  }
+
   render() {
     return (
       <Fragment>
@@ -52,7 +60,8 @@ class SavedQuestions extends Component {
               </div>
               <div className="savedQuestionDetails">
                 <h3>Answer: </h3>
-                <strong>{savedQuestion.answer}</strong>
+                <strong>{this.state.showAnswer ? savedQuestion.answer : 
+                <button className="ui primary button" id="showAnswerButton" onClick={this.showAnswer}>Click for answer</button> }</strong>
               </div>
               <DeleteBtn onClick={() => this.deleteSaved(savedQuestion._id)} />
             </div>
@@ -61,5 +70,8 @@ class SavedQuestions extends Component {
     )
   }
 }
+function mapStateToProps({ category, auth }) {
+  return { category, auth };
+}
 
-export default SavedQuestions;
+export default connect(mapStateToProps, actions) (SavedQuestions);
